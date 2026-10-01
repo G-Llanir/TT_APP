@@ -1,0 +1,391 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="TT_Flow.App.MainMaster" %>
+
+<%@ Import Namespace="TT_Hub" %>
+
+<%@ Register Src="~/App/Controles/SwitchAtivo.ascx" TagPrefix="uc1" TagName="SwitchAtivo" %>
+<%@ Register Src="~/App/Controles/ModalUsuario.ascx" TagPrefix="uc1" TagName="ModalUsuario" %>
+<%@ Register Src="~/App/Controles/MensagensDropdown.ascx" TagPrefix="uc1" TagName="MensagensDropdown" %>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Flow</title>
+    <link rel='icon' type='image/x-icon' href='/App/img/LogoTT.png' />
+
+    <script src="https://login.tecandtec.com.br/app/js/jquery-3.2.0.min.js"></script>
+    <link rel="stylesheet" href="https://login.tecandtec.com.br/plugins/Chosen/chosen.css">
+    <script src="https://login.tecandtec.com.br/plugins/Chosen/docsupport/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="https://login.tecandtec.com.br/plugins/Chosen/chosen.jquery.js" type="text/javascript"></script>
+    <script src="/App/JS/jquery-ui.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+
+    <script src="https://login.tecandtec.com.br/app/js/bootstrap.min.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/sb-admin.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/plugins/morris/morris.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/plugins/dataTables/datatables.min.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/plugins/jquery.mask.js"></script>
+
+    <script src="https://login.tecandtec.com.br/app/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="https://login.tecandtec.com.br/app/js/jquery-1.10.0.min.js" type="text/javascript"></script>
+    <script src="https://login.tecandtec.com.br/app/js/jquery-1.9.2.min.js" type="text/javascript"></script>
+    <script>$v192 = jQuery.noConflict();</script>
+
+    <script defer src="/App/JS/intro.js" type="text/javascript"></script>
+    <script defer src="/App/JS/sweetalert2-v11_15_2.js" type="text/javascript"></script>
+    <script defer src="/App/JS/tinymce_v8_3_2/js/tinymce/tinymce.min.js" type="text/javascript"></script>
+    <script defer src="/App/JS/alpine-mask.min.js" type="text/javascript"></script>
+    <script defer src="/App/JS/alpine-core.min.js" type="text/javascript"></script>
+
+    <link href="https://login.tecandtec.com.br/app/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://login.tecandtec.com.br/app/css/sb-admin.css" rel="stylesheet" />
+    <link href="https://login.tecandtec.com.br/app/css/TT.css" rel="stylesheet" />
+    <link href="https://login.tecandtec.com.br/app/css/plugins/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="https://login.tecandtec.com.br/app/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="https://login.tecandtec.com.br/app/css/plugins/datepicker/css/datepicker.css" rel="stylesheet" />
+    <link href="https://login.tecandtec.com.br/app/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <link href="/App/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/App/css/introjs.css" rel="stylesheet" id="link_IntroJS" />
+    <link href="/App/css/master.css?v=3" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body style="background-color: white;">
+
+    <form runat="server" id="frmTT_Flow" novalidate>
+
+        <div id="hdd">
+            <asp:HiddenField runat="server" ID="hddUrlRecurso" Value="" />
+        </div>
+
+        <asp:ScriptManager ID="sm_main" runat="server"></asp:ScriptManager>
+
+        <div id="wrapper">
+
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="menu-icon" onclick="toggleMenu()"></div>
+
+                <asp:UpdatePanel ID="upDashboard" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="False">
+                    <ContentTemplate>
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="/app/Dashboard.aspx"><%=TT_Flow.FrameWork.Identity.sNomeSistem_BancoConectado%></a>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-ex1-collapse barraSuperior" id="barraSuperior">
+                            <ul class="nav navbar-nav navbar-right navbar-user" style="margin-right: 5px;">
+                                <li>
+                                    <asp:LinkButton ID="lnkRecarregaMenu" runat="server" data-toggle="tooltip_bottom" title="Recarregar Permissões" OnClick="lnkRecarregaMenu_Click"><i class="fa fa-refresh"></i> </asp:LinkButton></li>
+                                <li>
+                                    <asp:LinkButton ID="cmdPaginaInicial" runat="server" data-toggle="tooltip_bottom" title="Definir como Página Inicial" OnClick="cmdPaginaInicial_Click"><i runat="server" id="iconPaginaInicial" class="fa fa-square-o"></i> </asp:LinkButton></li>
+                                <uc1:MensagensDropdown runat="server" ID="MensagensDropdown" />
+                                <li class="dropdown user-dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <%= TT_Flow.FrameWork.Identity.Variaveis.sUsuarioLogado() %> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="modalUsuario_Click"><i class="fa fa-user"></i> Perfil</a></li>
+                                        <li><a class="modalConfig"><i class="fa fa-gear"></i> Configurações</a></li>
+                                    </ul>
+                                </li>
+                                <li class="divider"></li>
+
+                                <li>
+                                    <asp:HyperLink runat="server" ID="lnkLogOut" NavigateUrl="/App/Login.aspx?LogOut=S"><i class="fa fa-power-off "></i> Log Out</asp:HyperLink></li>
+                            </ul>
+                        </div>
+
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="timer_Atualizar" EventName="Tick" />
+                    </Triggers>
+                </asp:UpdatePanel>
+
+                <asp:Timer ID="timer_Atualizar" runat="server" Interval="300000" OnTick="timer_main_Atualizar_Tick" Enabled="False"></asp:Timer>
+            </nav>
+
+            <div class="navbar-default navbar-static-side" role="navigation" style="margin: 0;">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <asp:UpdatePanel ID="updPanelbtnPesquisa" runat="server">
+                            <ContentTemplate>
+
+                                <li class="sidebar-search">
+                                    <div class="input-group">
+                                        <asp:TextBox ID="txtsPesquisa" runat="server" CssClass="form-control" Placeholder="Buscar Páginas" />
+                                        <span class="input-group-btn">
+                                            <asp:LinkButton runat="server" ID="btnPesquisa" class="btn btn-default" OnClick="cmdPesquisa_click"><i class="fa fa-search"></i></asp:LinkButton>
+                                        </span>
+                                    </div>
+                                </li>
+
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+
+                        <asp:Literal runat="server" ID="ltrMain"></asp:Literal>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div id="page-wrapper">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <asp:ContentPlaceHolder ID="cphCorpo" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+
+                <div runat="server" id="divMarcaDagua" class="marcaDagua"><b>DESENVOLVIMENTO</b></div>
+
+                <div id="div_Loading" style="display: none;">
+                    <div id="div_img" class="modal">
+                        <div class="loading">
+                            <div style="width: 100%;">
+                                <asp:Image ImageUrl="~\App\img\LogoTT.png" runat="server" ID="imgLoading" CssClass="imgLoading" />
+                            </div>
+                            <br />
+                            <b class="animacao_txt"></b>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <asp:UpdatePanel runat="server" ID="UpdModal_Config" UpdateMode="Conditional">
+                <ContentTemplate>
+
+                    <div class="modal fade" id="modalConfig">
+                        <div class="modal-dialog" style="width: 35%;">
+                            <div class="modal-content" style="min-height: 300px;">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h3 class="modal-title">Configurações</h3>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="row">
+
+                                        <div runat="server" id="div_ddlBancos" class="form-group col-lg-12">
+                                            <label>Bancos de Dados</label>
+                                            <asp:DropDownList runat="server" ID="ddlBancos" class="form-control Caixa_Selecao" AutoPostBack="true" OnSelectedIndexChanged="ddlBancos_SelectedIndexChanged"></asp:DropDownList>
+                                        </div>
+
+                                        <div class="form-group col-lg-12">
+                                            <label>Empresas</label>
+                                            <div style="display: flex; gap: 1rem;">
+                                                <asp:LinkButton runat="server" ID="btnBrasil" OnClick="btnBrasil_Click">
+                                                    <img id="imgBrasil" runat="server" class="media-object" src="~/App/img/Bandeira_Brasil.png" alt="Brasil">
+                                                </asp:LinkButton>
+                                                <asp:LinkButton ID="btnEUA" runat="server" OnClick="btnEUA_Click">
+                                                    <img id="imgEUA" runat="server" class="media-object" src="~/App/img/Bandeira_EUA.png" alt="EUA">
+                                                </asp:LinkButton>
+                                            </div>
+                                        </div>
+
+                                        <%--<div runat="server" id="div_SwitchTema" class="form-group col-lg-12">
+                                            <uc1:SwitchAtivo runat="server" ID="SwitchTema"></uc1:SwitchAtivo>
+                                        </div>--%>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="ddlBancos" EventName="SelectedIndexChanged" />
+                    <asp:AsyncPostBackTrigger ControlID="btnBrasil" EventName="Click" />
+                    <asp:AsyncPostBackTrigger ControlID="btnEUA" EventName="Click" />
+                </Triggers>
+            </asp:UpdatePanel>
+
+            <uc1:ModalUsuario runat="server" ID="ModalUsuario"></uc1:ModalUsuario>
+            <a id="lnkAssistenteIAFloat" runat="server" class="ia-assistente-float" href="/App/Paginas/IA/Chat.aspx" title="Abrir Tina" aria-label="Abrir Tina">
+                <span class="ia-assistente-float-icon"><i class="fa fa-comments-o"></i></span>
+                <span class="ia-assistente-float-text">Tina</span>
+            </a>
+
+        </div>
+
+        <script>
+            function MudarBotao_Pesquisa(botao) { $(botao).val('Pesquisando...'); }
+            function MudarBotao_Pesquisar(botao) { $(botao).val('Pesquisando...'); }
+            function MudarBotao_Salvar(botao) { $(botao).val('Salvando...'); }
+
+            function initializeChosen() { $(".Caixa_Selecao").chosen({ width: "100%" }); }
+
+            function toggleMenu() {
+                var menu = document.querySelector('.navbar-static-side');
+                var sidebarCollapse = document.querySelector('.sidebar-collapse');
+
+                menu.classList.toggle('open');
+
+                sidebarCollapse.classList.remove('collapse');
+                $('.menu-icon').toggleClass('X');
+            }
+
+            document.querySelector('.navbar-static-side').onclick = function (event) {
+                event.stopPropagation();
+            };
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var searchBox = document.getElementById('<%= txtsPesquisa.ClientID %>');
+                var searchButton = document.getElementById('<%= btnPesquisa.ClientID %>');
+
+                searchBox.addEventListener('keydown', function (event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        searchButton.click();
+                    }
+                });
+
+                searchButton.addEventListener('click', function (event) {
+                    if (!validateInputs()) {
+                        event.preventDefault();
+                    }
+                });
+
+                function validateInputs() {
+                    var isValid = true;
+
+                    if (searchBox.value.trim() === '') {
+                        searchBox.setCustomValidity('Por favor, preencha este campo.');
+                        searchBox.reportValidity();
+                        isValid = false;
+                    } else {
+                        searchBox.setCustomValidity('');
+                    }
+
+                    return isValid;
+                }
+            });
+
+            $(document).ready(function () {
+                var originalDoPostBack = window.__doPostBack;
+                var originalWebForm_DoPostBackWithOptions = window.WebForm_DoPostBackWithOptions;
+                window.__doPostBack = function (eventTarget, eventArgument) {
+                    if (tinymce) tinymce.triggerSave();
+                    originalDoPostBack(eventTarget, eventArgument);
+                };
+                window.WebForm_DoPostBackWithOptions = function (options) {
+                    if (tinymce) tinymce.triggerSave();
+                    return originalWebForm_DoPostBackWithOptions(options);
+                };
+                $('form').on('submit', function () { if (tinymce) tinymce.triggerSave(); });
+
+                var prm = Sys.WebForms.PageRequestManager.getInstance();
+                var loadingTimer;
+                prm.add_beginRequest(function () {
+                    if (tinymce) tinymce.triggerSave();
+                    loadingTimer = setTimeout(function () {
+                        $('[id*=div_Loading]').show();
+                        $('[id*=div_img]').show();
+                    }, 450);
+                });
+
+                prm.add_endRequest(function () {
+                    initializeChosen();
+                    clearTimeout(loadingTimer);
+                    $('[id*=div_Loading]').hide();
+                    $('[id*=div_img]').hide();
+                });
+
+                $(window).on('beforeunload', function () {
+                    loadingTimer = setTimeout(function () {
+                        $('[id*=div_Loading]').show();
+                        $('[id*=div_img]').show();
+                    }, 450);
+                });
+
+                initializeChosen();
+            });
+
+            function toggleColumnVisibility(checkbox) {
+                var headerText = checkbox.getAttribute('data-column-header');
+                var gridViewId = checkbox.getAttribute('data-gridview-id');
+                var gridView = document.getElementById(gridViewId);
+
+                if (gridView) {
+                    var wrapper = gridView.closest('.dataTables_wrapper');
+                    var temScroll = wrapper && wrapper.querySelector('.dataTables_scrollHead');
+
+                    if (temScroll) {
+                        toggleColumnDataTableComScroll(wrapper, headerText, checkbox.checked);
+                    } else {
+                        toggleColumnTable(gridView, headerText, checkbox.checked);
+                    }
+                }
+            }
+
+            function toggleColumnDataTableComScroll(wrapper, headerText, isChecked) {
+                var scrollHead = wrapper.querySelector('.dataTables_scrollHead');
+                var scrollBody = wrapper.querySelector('.dataTables_scrollBody');
+
+                var columnIndex = -1;
+                if (scrollHead) {
+                    var headers = scrollHead.querySelectorAll('th');
+                    headers.forEach((th, index) => {
+                        if (th.textContent.replace(/\s/g, '-') === headerText) {
+                            columnIndex = index;
+                        }
+                    });
+                }
+
+                if (columnIndex !== -1) {
+                    if (scrollHead) {
+                        var headerCells = scrollHead.querySelectorAll('th');
+                        if (headerCells[columnIndex]) {
+                            headerCells[columnIndex].style.display = isChecked ? '' : 'none';
+                        }
+                    }
+
+                    if (scrollBody) {
+                        var rows = scrollBody.querySelectorAll('tr');
+                        rows.forEach(row => {
+                            var cell = row.cells[columnIndex];
+                            if (cell) {
+                                cell.style.display = isChecked ? '' : 'none';
+                            }
+                        });
+                    }
+                }
+            }
+
+            function toggleColumnTable(gridView, headerText, isChecked) {
+                var headers = gridView.querySelectorAll('th');
+                var columnIndex = -1;
+
+                headers.forEach((th, index) => {
+                    if (th.textContent.replace(/\s/g, '-') === headerText) {
+                        columnIndex = index;
+                    }
+                });
+
+                if (columnIndex !== -1) {
+                    if (headers[columnIndex]) {
+                        headers[columnIndex].style.display = isChecked ? '' : 'none';
+                    }
+
+                    var rows = gridView.querySelectorAll('tr');
+                    rows.forEach(row => {
+                        var cell = row.cells[columnIndex];
+                        if (cell) {
+                            cell.style.display = isChecked ? '' : 'none';
+                        }
+                    });
+                }
+            }
+        </script>
+        
+    </form>
+</body>
+</html>

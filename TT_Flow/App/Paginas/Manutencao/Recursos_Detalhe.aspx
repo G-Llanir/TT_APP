@@ -1,0 +1,85 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/App/main.master" AutoEventWireup="true" CodeBehind="Recursos_Detalhe.aspx.cs" Inherits="TT_Flow.App.Paginas.Manutencao.Recursos_Detalhe" %>
+<%@ Register Src="~/App/Controles/BreadCrumb.ascx" TagPrefix="uc1" TagName="BreadCrumb" %>
+<%@ Register Src="~/App/Controles/PainelAtualizacao.ascx" TagPrefix="uc1" TagName="PainelAtualizacao" %>
+<%@ Register Src="~/App/Controles/ComboAtivo.ascx" TagPrefix="uc1" TagName="ComboAtivo" %>
+<%@ Register Src="~/App/Controles/MensagemPagina.ascx" TagPrefix="uc1" TagName="MensagemPagina" %>
+
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="content_Tarefas_Detalhe" ContentPlaceHolderID="cphCorpo" runat="server">
+    <div id="DIV_ESPACO" style="height:600px" runat ="server" visible="false"></div>
+    <asp:UpdatePanel ID="updDetalhe" runat="server">
+    <ContentTemplate>
+        <div class="form-stacked row">
+            <div class="col-lg-12">
+                <h1><asp:Label ID="lblTituloPagina" runat="server" Text="TITULO_PAGINA"></asp:Label></h1>
+                <uc1:BreadCrumb runat="server" ID="BreadCrumb"  NivelPagina="3" TitulodaPagina="Detalhe"/>
+            </div>
+        </div>
+                   
+        <div class="form-stacked row">
+            <div class="col-lg-12">
+                <uc1:MensagemPagina runat="server" id="MensagemPagina" />
+            </div>
+            
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label>ID </label>
+                    <asp:TextBox ID="txtidRecurso" class="form-control CaixaTextoMini" runat="server" disabled="0" ></asp:TextBox>
+                </div>
+
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">    
+                    <label>Tipo do Recurso </label>
+                    <asp:DropDownList ID="ddlidTipoRecurso" runat="server" class="form-control CaixaTextoGigante"  attrname="Departamento" > 
+                    </asp:DropDownList>
+                </div>
+            </div> 
+             <div class="col-lg-12">
+                <div class="form-group">
+                    <label>Recurso</label>
+                    <asp:TextBox ID="txtsDscRecurso" class="form-control CaixaTextoGigante" runat="server" MaxLength="300"></asp:TextBox>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label>Unidade </label>
+                    <asp:DropDownList ID="ddlsUnidade" runat="server" class="form-control CaixaTextoMedio"  attrname="Unidade" > 
+                    </asp:DropDownList>
+                </div>
+            </div> 
+
+            
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label>Descrição do Recurso (Memorando)</label>
+                    <asp:TextBox ID="txtsObservacao" class="form-control"  runat="server" MaxLength="4000" TextMode="MultiLine" Height="150px"></asp:TextBox>
+                </div>
+            </div>   
+            
+
+            <div class="col-lg-12">
+                <uc1:ComboAtivo runat="server" ID="ComboAtivo" />
+            </div> 
+        </div>
+
+        <uc1:PainelAtualizacao runat="server" id="PainelAtualizacao" />
+             
+            
+        <fieldset class="form-stacked actions">
+            <asp:Button ID="cmdSalvar" class="btn  btn-lg btn-success" runat="server" Text="Salvar" OnClick="cmdSalvar_Click" />
+            &nbsp;
+            <input type="submit" name="cancel" class="btn btn-lg btn-warning" value="Cancelar" " id="field-cancel" title="Voltar" onclick="history.go(-1)" >&nbsp;
+        </fieldset>
+
+        <asp:HiddenField ID="hddidRecurso" runat="server" />
+
+    </ContentTemplate>            
+</asp:UpdatePanel>
+
+</asp:Content>

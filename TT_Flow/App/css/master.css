@@ -1,0 +1,1426 @@
+﻿/*------------------------------------------------------------------------------*/
+/* Variáveis Globais */
+
+:root {
+    --content-form-check: '✔';
+    --shadow-color-form-check: green;
+    --color-form-check: #4CAF50;
+}
+
+/*------------------------------------------------------------------------------*/
+
+*:focus, *:focus-visible {
+    outline: none !important;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#page-wrapper {
+    position: relative;
+    transition: margin-left 0.5s;
+    margin-left: 0;
+    width: 100%;
+}
+
+.cursor-pointer { cursor: pointer; }
+
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+.content-center { align-content: center !important; }
+.content-start { align-content: start !important; }
+.content-end { align-content: end !important; }
+
+.invisivel { display: none !important; }
+
+.font-b { font-weight: bold !important; }
+.negrito { font-weight: bold !important; }
+
+.m-t { margin-top: 15px !important; }
+.m-r { margin-right: 15px !important; }
+.m-b { margin-bottom: 15px !important; }
+.m-l { margin-left: 15px !important; }
+.m-0 { margin: 0 !important; }
+.m-0-t { margin-top: 0 !important; }
+.m-0-r { margin-right: 0 !important; }
+.m-0-b { margin-bottom: 0 !important; }
+.m-0-l { margin-left: 0 !important; }
+
+.w-10 { width: 10% !important; }
+.w-25 { width: 25% !important; }
+.w-50 { width: 50% !important; }
+.w-75 { width: 75% !important; }
+.w-100 { width: 100% !important; }
+
+.padd {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
+.padd-r { padding-right: 15px !important; }
+.padd-l { padding-left: 15px !important; }
+.padd-0 { padding: 0 !important; }
+.padd-r-0 { padding-right: 0 !important; }
+.padd-l-0 { padding-left: 0 !important; }
+
+.float-l { float: left; }
+.float-r { float: right; }
+
+.form-stacked.actions { padding: 15px; }
+
+.d-flex { display: flex; }
+
+.fw-no { flex-wrap: nowrap; }
+.fw-w { flex-wrap: wrap; }
+
+.space-b { justify-content: space-between; }
+.space-e { justify-content: space-evenly; }
+
+.col-lg-1-5 { width: 10.66666667% !important; }											   
+.col-lg-1 .input-group, .col-lg-2 .input-group, .col-lg-3 .input-group,
+.col-lg-4 .input-group, .col-lg-5 .input-group, .col-lg-6 .input-group,
+.col-lg-7 .input-group, .col-lg-8 .input-group, .col-lg-9 .input-group,
+.col-lg-10 .input-group, .col-lg-11 .input-group, .col-lg-12 .input-group {
+    max-width: 100%;
+    width: 100%;
+}
+
+.fa-1x { font-size: 1.5rem; }
+.fa-2x { font-size: 2rem; }
+.fa-3x { font-size: 3rem; }
+.fa-4x { font-size: 4rem; }
+.fa-5x { font-size: 5rem; }
+
+.form-primary { background-color: #337ab7; color: white; }
+.form-success { background-color: #dff0d8; color: black; }
+.form-info { background-color: #d9edf7; color: black; }
+.form-warning { background-color: #fcf8e3; color: black; }
+.form-danger { background-color: #f2dede; color: black; }
+
+
+/*------------------------------------------------------------------------------*/
+/* Estilos para listas com marcadores pintados */
+
+ul.primary li::marker { color: blue; }
+ul.success li::marker { color: limegreen; }
+ul.info li::marker { color: deepskyblue; }
+ul.danger li::marker { color: red; }
+
+ol.primary li::marker { color: blue; font-weight: bold; }
+ol.success li::marker { color: limegreen; font-weight: bold; }
+ol.info li::marker { color: deepskyblue; font-weight: bold; }
+ol.danger li::marker { color: red; font-weight: bold; }
+
+/*------------------------------------------------------------------------------*/
+/* Estilos para 'pills' com .label */
+
+.label {
+    padding: .75rem 1rem;
+    border-radius: .75rem;
+}
+    .label.label-hover:hover { cursor: pointer; }
+    .label.label-hover.label-default:hover { background-color: #555; }
+    .label.label-hover.label-primary:hover { background-color: rgb(0, 100, 255); }
+    .label.label-hover.label-success:hover { background-color: forestgreen; }
+    .label.label-hover.label-info:hover { background-color: rgb(50, 175, 255); }
+    .label.label-hover.label-warning:hover { background-color: darkorange; }
+    .label.label-hover.label-danger:hover { background-color: rgb(200, 0, 0); }
+.label-1x { font-size: 1.5rem; }
+.label-2x { font-size: 2rem; }
+.label-3x { font-size: 3rem; }
+.label-4x { font-size: 4rem; }
+.label-5x { font-size: 5rem; }
+
+/*------------------------------------------------------------------------------*/
+/* Estilos para CheckBox_List padronizados */
+
+.checkList span {
+    display: flex;
+}
+
+    .checkList span label {
+        margin: 0 0 0 5px;
+    }
+
+    .checkList span input {
+        margin: 0;
+    }
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .tagList > .label {
+        margin: 0 2.5px 2.5px 0;
+        padding: .35em;
+        font-size: 85%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+.col-lg-12 > .tagList > .label {
+    font-size: 100% !important;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilos para tabelas de Histórico */
+
+.infoObs {
+    text-decoration: none;
+    color: blue;
+}
+
+.infoAlterada {
+    text-decoration: underline;
+    color: red;
+}
+
+.infoNova {
+    text-decoration: underline;
+    color: green;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para colocar 'símbolos' dentro de TextBox */
+
+.input-symbol {
+    position: relative;
+}
+
+    .input-symbol .symbol {
+        position: absolute;
+        right: 10px;
+        top: 20%;
+        z-index: 3;
+    }
+
+    .input-symbol input {
+        padding-right: 2.5em;
+    }
+
+/*------------------------------------------------------------------------------*/
+/* Ajuste no estilo para o .autocomplete em modais */
+
+.ui-autocomplete {
+    z-index: 1000000 !important;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo da Marca D'água no DEV */
+
+.marcaDagua {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 8vw;
+    color: rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    z-index: 10000000000000;
+    width: auto;
+    height: auto;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para um degradê (gradient) para a barra superior */
+
+.barraSuperior {
+    background-image: linear-gradient(to right, rgb(0, 80, 0), rgb(0, 50, 0) 25%, rgb(0, 40, 0) 50%, rgb(0, 50, 0) 75%, rgb(0, 80, 0));
+}
+
+/*------------------------------------------------------------------------------*/
+/* Botão global da Tina */
+
+.ia-assistente-float {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 42px;
+    min-height: 42px;
+    padding: 0;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 80, 0, .18);
+    background: rgba(255, 255, 255, .94);
+    color: #006b45 !important;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none !important;
+    opacity: .78;
+    box-shadow: 0 4px 12px rgba(0, 40, 0, .12);
+    transition: width .18s ease, padding .18s ease, opacity .18s ease, transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.ia-assistente-float:hover,
+.ia-assistente-float:focus {
+    width: 94px;
+    padding: 0 13px 0 9px;
+    color: #005c3b !important;
+    background: #fff;
+    opacity: 1;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 60, 0, .18);
+}
+
+.ia-assistente-float-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(0, 105, 68, .08);
+    font-size: 16px;
+}
+
+.ia-assistente-float-text {
+    display: inline-block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    transition: max-width .18s ease, opacity .18s ease, margin-left .18s ease;
+}
+
+.ia-assistente-float:hover .ia-assistente-float-text,
+.ia-assistente-float:focus .ia-assistente-float-text {
+    max-width: 44px;
+    margin-left: 7px;
+    opacity: 1;
+}
+
+@media (max-width: 760px) {
+    .ia-assistente-float {
+        right: 12px;
+        bottom: 12px;
+        width: 38px;
+        min-height: 38px;
+        opacity: .72;
+    }
+
+    .ia-assistente-float:hover,
+    .ia-assistente-float:focus {
+        width: 38px;
+        padding: 0;
+    }
+
+    .ia-assistente-float-text {
+        display: none;
+    }
+
+    .ia-assistente-float-icon {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 15px;
+    }
+}
+
+@media print {
+    .ia-assistente-float {
+        display: none;
+    }
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilos do Menu Lateral e do Ícone */
+
+.navbar-default.navbar-static-side {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.navbar-brand {
+    margin-left: 80px;
+}
+
+.menu-icon {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    z-index: 2000;
+    color: white;
+    transition: 0.25s;
+    border: solid 0.25px white;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 35px;
+    max-height: 40px;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+    .menu-icon::before {
+        content: "☰";
+    }
+
+.X {
+    display: flex;
+    transition: 0.25s;
+    border: solid 0.25px white;
+    border-radius: 10px;
+    min-width: 50px;
+    min-height: 35px;
+    max-height: 40px;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+    .X::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 40px;
+        background-image: url('/App/img/LogoTT.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+.navbar-static-side {
+    position: fixed;
+    top: 49px;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+    .navbar-static-side.open {
+        transform: translateX(0);
+    }
+
+.navbar-fixed-top {
+    height: 50px;
+}
+
+    .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+        max-height: 50px;
+    }
+
+/*------------------------------------------------------------------------------*/
+/* Estilos padrão para modais */
+
+.modal {
+    z-index: 3000;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow: visible !important;
+}
+
+    .modal .modal-content {
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    .modal .modal-body {
+        max-height: 100%;
+    }
+
+.modal-title {
+    font: bold;
+    color: green;
+}
+
+.modal-largo {
+    width: 80% !important;
+    max-width: 100% !important;
+}
+
+.modal-grande {
+    width: 70% !important;
+    max-width: 80% !important;
+}
+
+.modal-medio {
+    width: 60% !important;
+    max-width: 70% !important;
+}
+
+.modal-pequeno {
+    width: 35% !important;
+    max-width: 50% !important;
+}
+
+img.modal-logo {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para a Tela de Loading, incluindo suas animações */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#div_Loading {
+    z-index: 10000000000001;
+}
+
+.loading {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 50px;
+    flex-wrap: wrap;
+}
+
+.imgLoading {
+    max-width: 150px;
+    max-height: 170px;
+    animation: rotate 2.75s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        content: 'Aguarde';
+    }
+
+    25% {
+        content: 'Aguarde.';
+    }
+
+    50% {
+        content: 'Aguarde..';
+    }
+
+    75% {
+        content: 'Aguarde...';
+    }
+}
+
+.animacao_txt::before {
+    content: 'Aguarde';
+    display: inline-block;
+    animation: loading 2s linear infinite;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para mobile */
+
+@media (max-width: 768px) {
+    /*Esconde a descrição do sistema */
+    .navbar-brand {
+        display: none;
+    }
+
+    .navbar-inverse {
+        background-image: linear-gradient(to right, rgb(0, 80, 0), rgb(0, 50, 0) 25%, rgb(0, 40, 0) 50%, rgb(0, 50, 0) 75%, rgb(0, 80, 0));
+    }
+
+    /* Ajusta o posicionamento do ícone do menu */
+    .menu-icon {
+        top: 25px;
+        left: 10px;
+        position: fixed;
+        z-index: 2000;
+    }
+
+    /* Configura o menu lateral para deslizar da esquerda */
+    .navbar-static-side {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100%;
+        overflow-y: auto;
+        background: #f8f9fa;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+        /*  Faz o menu deslizar para dentro da tela*/
+        .navbar-static-side.open {
+            left: 0;
+        }
+
+    /*Garante que o conteúdo da página não se mova */
+    #page-wrapper {
+        margin-left: 0;
+    }
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para padronizar o Chosen */
+
+.chosen-container {
+    display: grid;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    .chosen-container .chosen-drop {
+        z-index: 4;
+    }
+
+.chosen-container-single .chosen-single {
+    width: 100%;
+    height: 32px;
+    background: white;
+    border: none;
+    font: 14px arial;
+    align-content: center;
+}
+
+    .chosen-container-active.chosen-with-drop .chosen-single,
+    .chosen-container-single .chosen-single:focus {
+        border-color: #66afe9;
+        box-shadow: 0 0 10px rgba(102, 175, 233, .6);
+        border-radius: 4px 4px 0 0;
+    }
+
+.chosen-container .chosen-results {
+    font-size: 14px;
+}
+
+    .chosen-container .chosen-results li {
+        padding: 5px 6px;
+        line-height: 20px;
+    }
+
+        .chosen-container .chosen-results li.highlighted {
+            background-color: #f5f5f5;
+            color: #262626;
+        }
+
+        .chosen-container .chosen-results li.active-result {
+            cursor: pointer;
+        }
+
+        .chosen-container .chosen-results li.no-results {
+            color: #999999;
+        }
+
+.chosen-container .chosen-search input[type="text"] {
+    margin: 0;
+    padding: 8px 4px;
+    width: 100%;
+    font-size: 14px;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para o Chosen desabilitado (disabled) ficar no padrão do sistema */
+
+select[readonly] {
+    cursor: not-allowed !important;
+    background-color: #eee !important;
+    opacity: 1 !important;
+    background: #eee !important;
+    pointer-events: none;
+}
+
+.chosen-disabled {
+    cursor: not-allowed !important;
+    background-color: #eee !important;
+    opacity: 1 !important;
+    background: #eee !important;
+    pointer-events: none;
+}
+
+    .chosen-disabled .chosen-single {
+        cursor: not-allowed !important;
+        background-color: #eee !important;
+        opacity: 1 !important;
+        background: #eee !important;
+    }
+
+    .chosen-disabled > .chosen-choices {
+        cursor: not-allowed !important;
+        background: #ddd !important;
+    }
+
+        .chosen-disabled > .chosen-choices > .search-choice {
+            cursor: not-allowed !important;
+        }
+
+            .chosen-disabled > .chosen-choices > .search-choice > a {
+                cursor: not-allowed !important;
+                color: red !important;
+            }
+
+        .chosen-disabled > .chosen-choices > .search-field > input {
+            cursor: not-allowed !important;
+        }
+
+.chosen-container-multi .chosen-choices {
+    background: none;
+}
+
+.chosen-disabled > .chosen-choices {
+    cursor: not-allowed !important;
+}
+
+    .chosen-disabled > .chosen-choices > .search-choice {
+        cursor: not-allowed !important;
+    }
+
+        .chosen-disabled > .chosen-choices > .search-choice > .search-choice-close {
+            cursor: not-allowed !important;
+        }
+
+    .chosen-disabled > .chosen-choices > .search-field {
+        cursor: not-allowed !important;
+    }
+
+        .chosen-disabled > .chosen-choices > .search-field > .chosen-search-input {
+            cursor: not-allowed !important;
+        }
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para deixar os panel verdes & o :hover do .caixaBotao */
+
+.panel-primary {
+    border-color: green;
+}
+
+    .panel-primary > .panel-heading {
+        color: #fff;
+        background-color: green;
+        border-color: green;
+    }
+
+        .panel-primary > .panel-heading + .panel-collapse .panel-body {
+            border-top-color: green;
+        }
+
+    .panel-primary > .panel-footer + .panel-collapse .panel-body {
+        border-bottom-color: green;
+    }
+
+.caixaBotao:hover {
+    box-shadow: 3px 3px 7px green, -3px -3px 7px green !important;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Estilo para função de ocultar colunas de GridView */
+
+.grid-toggle-check:checked + .grid-toggle-label {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.grid-toggle-label {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    color: #333;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    margin-right: 0.5px;
+    display: inline-block;
+}
+
+.grid-toggle-check {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+
+.btn-toggle-col {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    transition: background-color 0.1s ease;
+}
+
+    .btn-toggle-col:hover {
+        background-color: #449d44;
+    }
+
+/*------------------------------------------------------------------------------*/
+/* Adicionando Scroll à barra de busca dos WebMethod */
+
+.ui-autocomplete {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/*------------------------------------------------------------------------------*/
+/*Estilo para as bandeiras */
+
+.media-object {
+    max-height: 50px;
+    border-radius: 5px;
+}
+
+.selected {
+    border: 2px solid black;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Alterando o css para as linhas das GridView */
+
+.table-hover > tbody > tr:hover {
+    background-color: rgb(232.5, 232.5, 232.5);
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para .DataTables */
+
+.group-header-row td {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-row td {
+    background-color: #dedede;
+    font-weight: bold;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para caixas de seleção do HTMLEditor */
+
+.top_0 {
+    top: 50px !important;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar os CheckBox soltos */
+
+.form-check-primary {
+    --shadow-color-form-check: blue;
+    --color-form-check: #3d40fc;
+}
+
+.form-check-warning {
+    --shadow-color-form-check: yellow;
+    --color-form-check: #e8e110;
+}
+
+.form-check-danger {
+    --shadow-color-form-check: red;
+    --color-form-check: #de3910;
+}
+
+.form-check-x, .form-check-X {
+    --content-form-check: '✖';
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    white-space: nowrap;
+}
+
+    .form-check label {
+        margin: 0;
+    }
+
+    .form-check input {
+        position: relative;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: white;
+        border: 2px solid #d1d1d1;
+        padding: 10px;
+        border-radius: 3px;
+        transition: box-shadow 0.3s;
+        margin: 0 10px 0 0;
+    }
+
+        .form-check input:checked::before {
+            position: absolute;
+            content: var(--content-form-check);
+            font-weight: bold;
+            font-size: 100%;
+            color: white;
+            transform: translate(-50%, -55%);
+            pointer-events: none;
+        }
+
+        .form-check input:hover {
+            box-shadow: 0 0 8px var(--shadow-color-form-check);
+        }
+
+        .form-check input:checked {
+            background-color: var(--color-form-check);
+            border-color: var(--color-form-check);
+        }
+
+td.form-check {
+    justify-content: left;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar os CheckBoxList */
+
+.checkBoxList td {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    white-space: nowrap;
+}
+
+    .checkBoxList td label {
+        margin: 0;
+    }
+
+    .checkBoxList td input {
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #f0f0f0;
+        border: 2px solid #d1d1d1;
+        padding: 10px;
+        border-radius: 3px;
+        transition: box-shadow 0.3s;
+        margin: 0 10px 0 0;
+    }
+
+        .checkBoxList td input:hover {
+            box-shadow: 0 0 8px green;
+        }
+
+        .checkBoxList td input:checked {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar listas de RadioButton */
+
+.Lista_Radio span {
+    display: flex;
+}
+
+    .Lista_Radio span label {
+        margin: 0 0 0 5px;
+    }
+
+    .Lista_Radio span input {
+        margin: 0;
+    }
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar o botão de Configurações */
+
+.modalConfig {
+    cursor: pointer;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar de forma alternativa as Grids */
+
+.tableClean {
+    border: solid 2px gray;
+    border-radius: 7.5px;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar o .Draggable */
+
+.ui-draggable-handle {
+    cursor: move;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS para estilizar o TinyMCE.js */
+
+.tox-promotion {
+    display: none !important;
+}
+
+.tox.tox-tinymce {
+    border-color: #ccc !important;
+}
+
+/*------------------------------------------------------------------------------*/
+/* CSS dos Controles '_Padrao' */
+
+div.validarPadrao_Erro .form-control, div.validarPadrao_Erro div.chosen-container {
+    position: relative;
+    border-color: red !important;
+    box-shadow: 0 0 8px red !important;
+}
+
+div.validarPadrao_Erro::after {
+    content: attr(data-validarpadrao_erro);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 7px);
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+div.validarPadrao_Erro::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: calc(100% - 4px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent red transparent;
+    z-index: 2;
+}
+
+.lnkPadrao {
+    color: #337ab7;
+}
+
+/*------------------------------------------------------------------------------*/
+/* Dropdown de mensagens da barra superior */
+
+.messages-dropdown > .messages-dropdown-toggle {
+    display: flex !important;
+    align-items: center;
+    gap: 7px;
+    min-height: 50px;
+}
+
+.messages-dropdown-trigger-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.messages-dropdown-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background-color: #d9534f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.messages-dropdown-caret {
+    margin-left: 1px;
+    font-size: 12px;
+    opacity: .85;
+}
+
+.navbar-right .messages-dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+.messages-dropdown-menu {
+    width: 390px;
+    max-width: calc(100vw - 20px);
+    max-height: calc(100vh - 70px);
+    max-height: min(680px, calc(100dvh - 70px));
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #d9e2df;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .18);
+}
+
+.messages-dropdown.open > .messages-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-dropdown-header {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px 17px;
+    border-bottom: 1px solid #e8eeeb;
+    background: linear-gradient(135deg, #f4faf6 0%, #fff 100%);
+}
+
+.messages-dropdown-title,
+.messages-dropdown-summary {
+    display: block;
+}
+
+.messages-dropdown-title {
+    color: #1f3427;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.messages-dropdown-summary {
+    margin-top: 2px;
+    color: #6c7b72;
+    font-size: 12px;
+}
+
+.messages-dropdown-header-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    border-radius: 50%;
+    background: #e4f3e8;
+    color: #087b27;
+    font-size: 17px;
+}
+
+.messages-dropdown-filters {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 6px;
+    padding: 9px 12px;
+    overflow-x: auto;
+    border-bottom: 1px solid #e8eeeb;
+    background: #fff;
+    scrollbar-width: thin;
+}
+
+.messages-dropdown-filter-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 30px;
+    padding: 5px 10px;
+    flex: 1 0 auto;
+    border: 1px solid #d9e2df;
+    border-radius: 15px;
+    outline: 0;
+    background: #fff;
+    color: #53645a;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.messages-dropdown-filter-button:hover,
+.messages-dropdown-filter-button:focus {
+    border-color: #9db5a5;
+    background: #f2f7f4;
+    color: #254a30;
+}
+
+.messages-dropdown-filter-button.is-active {
+    border-color: #087b27;
+    background: #087b27;
+    color: #fff;
+}
+
+.messages-dropdown-content {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #b6c4bb transparent;
+}
+
+.messages-dropdown-content::-webkit-scrollbar {
+    width: 7px;
+}
+
+.messages-dropdown-content::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #b6c4bb;
+}
+
+.messages-dropdown-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.messages-dropdown-item {
+    display: none;
+    border-bottom: 1px solid #edf1ef;
+}
+
+.messages-dropdown-item.is-visible {
+    display: list-item;
+}
+
+.messages-dropdown-item:last-of-type {
+    border-bottom: 0;
+}
+
+.messages-dropdown-item-card {
+    display: flex;
+    gap: 12px;
+    padding: 13px 16px;
+    transition: background-color .15s ease;
+}
+
+.messages-dropdown-item-card:hover {
+    background-color: #f7faf8;
+}
+
+.messages-dropdown-item-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    margin-top: 1px;
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.messages-dropdown-item-message .messages-dropdown-item-icon {
+    background: #e9f2fb;
+    color: #337ab7;
+}
+
+.messages-dropdown-item-alert .messages-dropdown-item-icon {
+    background: #fff2d8;
+    color: #a86800;
+}
+
+.messages-dropdown-item-content {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.messages-dropdown-item-meta,
+.messages-dropdown-item-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.messages-dropdown-item-sender {
+    min-width: 0;
+    overflow: hidden;
+    color: #34463b;
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.messages-dropdown-item-date {
+    flex: 0 0 auto;
+    color: #87928b;
+    font-size: 11px;
+}
+
+.messages-dropdown-item-subject {
+    display: -webkit-box;
+    min-height: 36px;
+    margin: 4px 0 8px;
+    overflow: hidden;
+    color: #3f4d45;
+    font-size: 13px;
+    line-height: 18px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.messages-dropdown-item-type {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: #eef2f0;
+    color: #5b6961;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+.messages-dropdown-item-alert .messages-dropdown-item-type {
+    background: #fff2d8;
+    color: #8d5a00;
+}
+
+.messages-dropdown-view {
+    color: #167a30;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.messages-dropdown-view:hover,
+.messages-dropdown-view:focus {
+    color: #075c1b;
+    text-decoration: none;
+}
+
+.messages-dropdown-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 28px 18px;
+    color: #6d7a72;
+    text-align: center;
+}
+
+.messages-dropdown-state > i {
+    margin-bottom: 3px;
+    color: #279348;
+    font-size: 28px;
+}
+
+.messages-dropdown-state strong {
+    color: #35463c;
+}
+
+.messages-dropdown-state-warning > i {
+    color: #c78616;
+}
+
+.messages-dropdown-filter-empty {
+    display: none;
+}
+
+.messages-dropdown-filter-empty.is-active {
+    display: flex;
+}
+
+.messages-dropdown-footer {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 11px 13px;
+    border-top: 1px solid #e5ebe8;
+    background: #f8faf9;
+}
+
+.messages-dropdown-footer > .messages-dropdown-footer-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: #42604c;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.messages-dropdown-footer > .messages-dropdown-footer-link:hover,
+.messages-dropdown-footer > .messages-dropdown-footer-link:focus {
+    background: #e8efeb;
+    color: #21442c;
+    text-decoration: none;
+}
+
+.messages-dropdown-footer > .messages-dropdown-footer-primary {
+    background: #087b27;
+    color: #fff;
+}
+
+.messages-dropdown-footer > .messages-dropdown-footer-primary:hover,
+.messages-dropdown-footer > .messages-dropdown-footer-primary:focus {
+    background: #05651f;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .messages-dropdown-trigger-text {
+        display: inline;
+    }
+
+    .navbar-nav .open .messages-dropdown-menu {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        max-height: calc(100vh - 70px);
+        max-height: calc(100dvh - 70px);
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .messages-dropdown-item-card {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .messages-dropdown-header {
+        padding: 12px 14px;
+    }
+
+    .messages-dropdown-filters {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .messages-dropdown-footer {
+        padding: 9px 10px;
+    }
+}
+
+@media (max-height: 620px) {
+    .messages-dropdown-header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .messages-dropdown-header-icon {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+        font-size: 15px;
+    }
+
+    .messages-dropdown-item-card {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .messages-dropdown-item-subject {
+        min-height: 18px;
+        -webkit-line-clamp: 1;
+    }
+}

@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{71843EC1-6819-4C57-8FF3-68A5C028B8C0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TT_Colaborador</RootNamespace>
+    <AssemblyName>TT_Colaborador</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44394</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Enums.NET, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>..\packages\Enums.NET.5.0.0\lib\net461\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=6.2.7.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.6.2.7\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedNumerics.BigDecimal, Version=3001.1.0.233, Culture=neutral, PublicKeyToken=65f1315a45ad8949, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtendedNumerics.BigDecimal.3001.1.0.233\lib\net48\ExtendedNumerics.BigDecimal.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.70.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.70\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="API\WebMethods.asmx" />
+    <Content Include="Aplicativo\Controles\BreadCrumb.ascx" />
+    <Content Include="Aplicativo\Controles\Calendario.ascx" />
+    <Content Include="Aplicativo\Controles\ComboAtivo.ascx" />
+    <Content Include="Aplicativo\Controles\FiltroPesquisa.ascx" />
+    <Content Include="Aplicativo\Controles\MensagemPagina.ascx" />
+    <Content Include="Aplicativo\Controles\MultiSelecao.ascx" />
+    <Content Include="Aplicativo\Controles\PainelAtualizacao.ascx" />
+    <Content Include="Aplicativo\Controles\Recursos.ascx" />
+    <Content Include="Aplicativo\Controles\Referencia_MesAno.ascx" />
+    <Content Include="Aplicativo\Controles\SwitchAtivo.ascx" />
+    <Content Include="Aplicativo\Controles\TimerPicker.ascx" />
+    <Content Include="Aplicativo\Controles\Upload_Arquivo.ascx" />
+    <Content Include="Aplicativo\css\bootdey-template.css" />
+    <Content Include="Aplicativo\css\sb-admin\styles.css" />
+    <Content Include="Aplicativo\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Aplicativo\Download.aspx" />
+    <Content Include="Aplicativo\img\defaultUser.png" />
+    <Content Include="Aplicativo\img\LogoTT.png" />
+    <Content Include="Aplicativo\JS\FullCalendar.global.min.js" />
+    <Content Include="Aplicativo\JS\sb-adminjs\datatables-simple-demo.js" />
+    <Content Include="Aplicativo\JS\sb-adminjs\scripts.js" />
+    <Content Include="Aplicativo\JS\sweetalert2-v11_15_2.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\adapters\jquery.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\build-config.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\ckeditor.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\config.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\contents.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\af.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ar.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\az.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\bg.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\bn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\bs.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\cs.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\cy.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\da.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\de-ch.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\de.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\el.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\en-au.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\en-ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\en-gb.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\en.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\eo.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\es-mx.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\es.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\et.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\eu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\fa.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\fi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\fo.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\fr-ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\fr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\gl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\gu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\he.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\hi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\hr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\hu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\id.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\is.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\it.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ja.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ka.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\km.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ko.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ku.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\lt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\lv.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\mk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\mn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ms.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\nb.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\nl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\no.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\oc.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\pl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\pt-br.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\pt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ro.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ru.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\si.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\sk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\sl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\sq.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\sr-latn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\sr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\sv.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\th.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\tr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\tt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\ug.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\uk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\vi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\zh-cn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\lang\zh.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\dialog\styles\dialog.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\icons.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\pastefromgdocs\filter\default.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\pastefromlibreoffice\filter\default.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\pastetools\filter\common.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\pastetools\filter\image.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ro.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\sr-latn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\sr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\css\samples.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\img\github-top.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\img\logo.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\img\logo.svg" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\index.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\js\sample.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\js\sf.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\ajax.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\api.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\appendto.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\index.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\jquery.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\readonly.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\sample.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\sample.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\styles.js" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\vendor\promise.js" />
+    <Content Include="Aplicativo\MenuColaborador.aspx" />
+    <Content Include="Aplicativo\Login.aspx" />
+    <Content Include="Aplicativo\Paginas\Arquivos.aspx" />
+    <Content Include="Aplicativo\Paginas\Avisos\Avisos.aspx" />
+    <Content Include="Aplicativo\Paginas\Beneficios\Beneficios.aspx" />
+    <Content Include="Aplicativo\Paginas\Calendario.aspx" />
+    <Content Include="Aplicativo\Paginas\Colaboradores\Colaborador.aspx" />
+    <Content Include="Aplicativo\Paginas\Colaboradores\Colaborador_Dados.aspx" />
+    <Content Include="Aplicativo\Paginas\Conversas\Conversas_Dados.aspx" />
+    <Content Include="Aplicativo\Paginas\Despesas\DespesasService.asmx" />
+    <Content Include="Aplicativo\Paginas\Despesas\Relatorio_Despesas.aspx" />
+    <Content Include="Aplicativo\Paginas\Despesas\Relatorio_Despesas_Detalhe.aspx" />
+    <Content Include="Aplicativo\Paginas\EPI\EntregaEPI.aspx" />
+    <Content Include="Aplicativo\Paginas\Feed\Feed.aspx" />
+    <Content Include="Aplicativo\Paginas\Mensagem\Mensagens.aspx" />
+    <Content Include="Aplicativo\Paginas\Mensagem\Mensagens_Detalhe.aspx" />
+    <Content Include="Aplicativo\Paginas\Solicitacoes\Solicitacoes.aspx" />
+    <Content Include="Aplicativo\Paginas\Terceiros\FechamentoPJ.aspx" />
+    <Content Include="Aplicativo\Paginas\Veiculos\Veiculos.aspx" />
+    <Content Include="Aplicativo\PermissaoNegada.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Site.Master" />
+    <Content Include="Bundle.config" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\WebMethods.asmx.cs">
+      <DependentUpon>WebMethods.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\BreadCrumb.ascx.cs">
+      <DependentUpon>BreadCrumb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\BreadCrumb.ascx.designer.cs">
+      <DependentUpon>BreadCrumb.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Calendario.ascx.cs">
+      <DependentUpon>Calendario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Calendario.ascx.designer.cs">
+      <DependentUpon>Calendario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\ComboAtivo.ascx.cs">
+      <DependentUpon>ComboAtivo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\ComboAtivo.ascx.designer.cs">
+      <DependentUpon>ComboAtivo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\FiltroPesquisa.ascx.cs">
+      <DependentUpon>FiltroPesquisa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\FiltroPesquisa.ascx.designer.cs">
+      <DependentUpon>FiltroPesquisa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\MensagemPagina.ascx.cs">
+      <DependentUpon>MensagemPagina.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\MensagemPagina.ascx.designer.cs">
+      <DependentUpon>MensagemPagina.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\MultiSelecao.ascx.cs">
+      <DependentUpon>MultiSelecao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\MultiSelecao.ascx.designer.cs">
+      <DependentUpon>MultiSelecao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\PainelAtualizacao.ascx.cs">
+      <DependentUpon>PainelAtualizacao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\PainelAtualizacao.ascx.designer.cs">
+      <DependentUpon>PainelAtualizacao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Recursos.ascx.cs">
+      <DependentUpon>Recursos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Recursos.ascx.designer.cs">
+      <DependentUpon>Recursos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Referencia_MesAno.ascx.cs">
+      <DependentUpon>Referencia_MesAno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Referencia_MesAno.ascx.designer.cs">
+      <DependentUpon>Referencia_MesAno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\SwitchAtivo.ascx.cs">
+      <DependentUpon>SwitchAtivo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\SwitchAtivo.ascx.designer.cs">
+      <DependentUpon>SwitchAtivo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\TimerPicker.ascx.cs">
+      <DependentUpon>TimerPicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\TimerPicker.ascx.designer.cs">
+      <DependentUpon>TimerPicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Upload_Arquivo.ascx.cs">
+      <DependentUpon>Upload_Arquivo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Controles\Upload_Arquivo.ascx.designer.cs">
+      <DependentUpon>Upload_Arquivo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\MenuColaborador.aspx.cs">
+      <DependentUpon>MenuColaborador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\MenuColaborador.aspx.designer.cs">
+      <DependentUpon>MenuColaborador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Arquivos.aspx.cs">
+      <DependentUpon>Arquivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Arquivos.aspx.designer.cs">
+      <DependentUpon>Arquivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Avisos\Avisos.aspx.cs">
+      <DependentUpon>Avisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Avisos\Avisos.aspx.designer.cs">
+      <DependentUpon>Avisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Beneficios\Beneficios.aspx.cs">
+      <DependentUpon>Beneficios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Beneficios\Beneficios.aspx.designer.cs">
+      <DependentUpon>Beneficios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Calendario.aspx.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Calendario.aspx.designer.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Colaboradores\Colaborador.aspx.cs">
+      <DependentUpon>Colaborador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Colaboradores\Colaborador.aspx.designer.cs">
+      <DependentUpon>Colaborador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Colaboradores\Colaborador_Dados.aspx.cs">
+      <DependentUpon>Colaborador_Dados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Colaboradores\Colaborador_Dados.aspx.designer.cs">
+      <DependentUpon>Colaborador_Dados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Conversas\Conversas_Dados.aspx.cs">
+      <DependentUpon>Conversas_Dados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Conversas\Conversas_Dados.aspx.designer.cs">
+      <DependentUpon>Conversas_Dados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Despesas\Relatorio_Despesas.aspx.cs">
+      <DependentUpon>Relatorio_Despesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Despesas\Relatorio_Despesas.aspx.designer.cs">
+      <DependentUpon>Relatorio_Despesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Despesas\Relatorio_Despesas_Detalhe.aspx.cs">
+      <DependentUpon>Relatorio_Despesas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Despesas\Relatorio_Despesas_Detalhe.aspx.designer.cs">
+      <DependentUpon>Relatorio_Despesas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\EPI\EntregaEPI.aspx.cs">
+      <DependentUpon>EntregaEPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\EPI\EntregaEPI.aspx.designer.cs">
+      <DependentUpon>EntregaEPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Feed\Feed.aspx.cs">
+      <DependentUpon>Feed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Feed\Feed.aspx.designer.cs">
+      <DependentUpon>Feed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Mensagem\Mensagens.aspx.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Mensagem\Mensagens.aspx.designer.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Mensagem\Mensagens_Detalhe.aspx.cs">
+      <DependentUpon>Mensagens_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Mensagem\Mensagens_Detalhe.aspx.designer.cs">
+      <DependentUpon>Mensagens_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Solicitacoes\Solicitacoes.aspx.cs">
+      <DependentUpon>Solicitacoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Solicitacoes\Solicitacoes.aspx.designer.cs">
+      <DependentUpon>Solicitacoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Terceiros\FechamentoPJ.aspx.cs">
+      <DependentUpon>FechamentoPJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Terceiros\FechamentoPJ.aspx.designer.cs">
+      <DependentUpon>FechamentoPJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Veiculos\Veiculos.aspx.cs">
+      <DependentUpon>Veiculos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\Paginas\Veiculos\Veiculos.aspx.designer.cs">
+      <DependentUpon>Veiculos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicativo\PermissaoNegada.aspx.cs">
+      <DependentUpon>PermissaoNegada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aplicativo\PermissaoNegada.aspx.designer.cs">
+      <DependentUpon>PermissaoNegada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrameWork\Classes\cls_Arquivos.cs" />
+    <Compile Include="FrameWork\Classes\cls_Despesas.cs" />
+    <Compile Include="FrameWork\Classes\cls_Veiculos.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewGroup.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewGroupList.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewHelper.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewSummary.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewSummaryList.cs" />
+    <Compile Include="FrameWork\Identity.cs" />
+    <Compile Include="FrameWork\PermissaoAcesso.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Aplicativo\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Aplicativo\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Aplicativo\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Aplicativo\Reports\Relatorio_Despesas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Aplicativo\JS\vendor\ckeditor\CHANGES.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\LICENSE.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\README.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\SECURITY.md" />
+    <Content Include="Aplicativo\JS\vendor\ckeditor\skins\moono-lisa\readme.md" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TT_Framework\TT_Framework.csproj">
+      <Project>{e16fed48-e4cb-49fb-9f77-b72f3060f586}</Project>
+      <Name>TT_Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63940</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44394/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

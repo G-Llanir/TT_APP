@@ -1,0 +1,3023 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{697C115A-F6B9-439F-B21C-8933A6E4470F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TT_Flow</RootNamespace>
+    <AssemblyName>TT_Flow</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.HtmlEditor.Sanitizer, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.HtmlEditor.Sanitizer.20.1.0\lib\net40\AjaxControlToolkit.HtmlEditor.Sanitizer.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="Docnet.Core, Version=2.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Docnet.Core.2.6.0\lib\netstandard2.0\Docnet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Enums.NET, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>..\packages\Enums.NET.5.0.0\lib\net461\Enums.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=8.4.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.8.4.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=8.4.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.8.4.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtendedNumerics.BigDecimal, Version=2025.1001.2.129, Culture=neutral, PublicKeyToken=65f1315a45ad8949, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtendedNumerics.BigDecimal.2025.1001.2.129\lib\net48\ExtendedNumerics.BigDecimal.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.59.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.59\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.4.2.13, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.4.2\lib\netstandard2.0\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-adapter, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.bouncy-castle-adapter.9.2.0\lib\net461\itext.bouncy-castle-adapter.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.bouncy-castle-connector, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.bouncy-castle-connector.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.commons.9.2.0\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfua, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.pdfua.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=9.2.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext.9.2.0\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cd8b63ad3d691a37, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Signed.5.0.0\lib\net48\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1620.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.Core, Version=2.7.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.0\lib\net472\NPOI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.7.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.0\lib\net472\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.7.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.0\lib\net472\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.7.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.7.0\lib\net472\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.1\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.10\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.3\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.8.0.2\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Tesseract, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.5.2.0\lib\net48\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZString, Version=2.6.0.0, Culture=neutral, PublicKeyToken=df4c250b14d82627, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZString.2.6.0\lib\netstandard2.0\ZString.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.10.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.10\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.10.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.10\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="API\IA_ArquivoUpload.aspx" />
+    <Content Include="API\IA_Chat.aspx" />
+    <Content Include="API\IA_Stream.aspx" />
+    <Content Include="API\Pagina_Ajax.aspx" />
+    <Content Include="API\botpress.aspx" />
+    <Content Include="App\Assets\LOGOOFICIAL_Vertical_Principal.png" />
+    <Content Include="App\Controles\AddLoteSerie.ascx" />
+    <Content Include="App\Controles\AvisosInformacoes.ascx" />
+    <Content Include="App\Controles\Calendario.ascx" />
+    <Content Include="App\Controles\ChartControl.ascx" />
+    <Content Include="App\Controles\ContadorMensagem.ascx" />
+    <Content Include="App\Controles\Controle_CategoriasCC.ascx" />
+    <Content Include="App\Controles\DetalheModalProduto.ascx" />
+    <Content Include="App\Controles\DropDownList_Padrao.ascx" />
+    <Content Include="App\Controles\ExcelImportar.ascx" />
+    <Content Include="App\Controles\ExportarExcel.ascx" />
+    <Content Include="App\Controles\FiltroPesquisa.ascx" />
+    <Content Include="App\Controles\GerenciadorMembrosModal.ascx" />
+    <Content Include="App\Controles\IA_Widget.ascx" />
+    <Content Include="App\Controles\ImportadorItensModal.ascx" />
+    <Content Include="App\Controles\LeitorQuagga.ascx" />
+    <Content Include="App\Controles\Manual.ascx" />
+    <Content Include="App\Controles\MensagensDropdown.ascx" />
+    <Content Include="App\Controles\ModalUsuario.ascx" />
+    <Content Include="App\Controles\MultiSelecao.ascx" />
+    <Content Include="App\Controles\Pesquisa_Colaborador.ascx" />
+    <Content Include="App\Controles\Pesquisa_Parceiros.ascx" />
+    <Content Include="App\Controles\ProdutosImportador.ascx" />
+    <Content Include="App\Controles\Recursos.ascx" />
+    <Content Include="App\Controles\Referencia_MesAno.ascx" />
+    <Content Include="App\Controles\SwitchAtivo.ascx" />
+    <Content Include="App\Controles\TagDropdownControl.ascx" />
+    <Content Include="App\Controles\TextBox_Padrao.ascx" />
+    <Content Include="App\Controles\TimerPicker.ascx" />
+    <Content Include="App\Controles\UpdatePanel_Loading.ascx" />
+    <Content Include="App\Controles\UploadArquivo_Padrao.ascx" />
+    <Content Include="App\Controles\Upload_Arquivo.ascx" />
+    <Content Include="App\css\font-awesome\css\font-awesome.css" />
+    <Content Include="App\css\font-awesome\css\font-awesome.min.css" />
+    <Content Include="App\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="App\css\HtmlEditor.css" />
+    <Content Include="App\css\introjs.css" />
+    <Content Include="App\css\master.css" />
+    <Content Include="App\css\styleCRM.css" />
+    <Content Include="App\css\vendor\drawflow.min.css" />
+    <Content Include="App\Download.aspx" />
+    <Content Include="App\ExibeArquivo.aspx" />
+    <Content Include="App\img\award-solid.svg" />
+    <Content Include="App\img\Bandeira_Brasil.png" />
+    <Content Include="App\img\Bandeira_EUA.png" />
+    <Content Include="App\img\Carimbo_Approved.png" />
+    <Content Include="App\img\Carimbo_Original.png" />
+    <Content Include="App\img\Espelho.png" />
+    <Content Include="App\img\fornecedores.png" />
+    <Content Include="App\img\LogoTT.png" />
+    <Content Include="App\img\LogoTT_Horizontal.png" />
+    <Content Include="App\img\Logo_Empresa.png" />
+    <Content Include="App\img\Rascunho_Marca_Dagua.png" />
+    <Content Include="App\img\STSO_EmAndamento.jfif" />
+    <Content Include="App\img\STSO_NãoRealizado.jfif" />
+    <Content Include="App\img\STSO_Ralizado.jfif" />
+    <Content Include="App\img\tina-v1.gif" />
+    <Content Include="App\img\userPic.png" />
+    <Content Include="App\img\wms_armazenamento.png" />
+    <Content Include="App\img\wms_dimensoes.svg" />
+    <Content Include="App\img\wms_saldos.png" />
+    <Content Include="App\img\wms_transporte.png" />
+    <Content Include="App\JS\alpine-core.min.js" />
+    <Content Include="App\JS\alpine-mask.min.js" />
+    <Content Include="App\JS\cnpj_cpf.js" />
+    <Content Include="App\JS\FullCalendar.global.min.js" />
+    <Content Include="App\JS\ia-markdown.js" />
+    <Content Include="App\JS\ia-workflow-canvas.js" />
+    <Content Include="App\JS\intro.js" />
+    <Content Include="App\JS\jquery-ui.min.js" />
+    <Content Include="App\JS\kanbanCRM.js" />
+    <Content Include="App\JS\Mascaras.js" />
+    <Content Include="App\JS\master.js" />
+    <Content Include="App\JS\Projetos.min.js" />
+    <Content Include="App\JS\quagga.min.js" />
+    <Content Include="App\JS\sweetalert2-v11_14_5.js" />
+    <Content Include="App\JS\sweetalert2-v11_15_2.js" />
+    <Content Include="App\JS\TabelaConsulta.js" />
+    <Content Include="App\JS\Tabelas.min.js" />
+    <Content Include="App\JS\Tabelas_ControleValores.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\icons\default\icons.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\models\dom\model.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\notices.txt" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\accordion\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\emoticons\js\emojiimages.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\emoticons\js\emojiimages.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\emoticons\js\emojis.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\emoticons\js\emojis.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ar.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\bg-BG.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\bg_BG.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ca.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\cs.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\da.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\de.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\el.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\en.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\es.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\eu.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\fa.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\fi.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\fr-FR.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\fr_FR.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\he-IL.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\he_IL.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\hi.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\hr.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\hu-HU.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\hu_HU.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\id.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\it.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ja.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\kk.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ko-KR.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ko_KR.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ms.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\nb-NO.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\nb_NO.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\nl.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\pl.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\pt-BR.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\pt-PT.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\pt_BR.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\pt_PT.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ro.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\ru.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\sk.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\sl-SI.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\sl_SI.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\sv-SE.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\sv_SE.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\th-TH.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\th_TH.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\tr.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\uk.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\vi.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\zh-CN.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\zh-TW.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\zh_CN.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\js\i18n\keynav\zh_TW.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\help\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\quickbars\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\dark\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\dark\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\default\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\default\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\document\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\document\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\tinymce-5-dark\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\tinymce-5-dark\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\tinymce-5\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\tinymce-5\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\writer\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\content\writer\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\content.inline.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\content.inline.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\skin.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\skin.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\skin.shadowdom.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide-dark\skin.shadowdom.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\content.inline.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\content.inline.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\skin.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\skin.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\skin.shadowdom.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\oxide\skin.shadowdom.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\content.inline.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\content.inline.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\skin.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\skin.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5-dark\skin.shadowdom.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\content.inline.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\content.inline.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\content.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\content.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\skin.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\skin.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\skins\ui\tinymce-5\skin.shadowdom.min.css" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\themes\silver\theme.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\tinymce.min.js" />
+    <Content Include="App\JS\tinymce_v8_3_2\langs\pt_BR.js" />
+    <Content Include="App\JS\UploadImagem.js" />
+    <Content Include="App\JS\vendor\drawflow.LICENSE.txt" />
+    <Content Include="App\JS\vendor\drawflow.min.js" />
+    <Content Include="App\JS\xlsx.full.min.js" />
+    <Content Include="App\Paginas\Adm\Faturamento\EmissaoNFE.aspx" />
+    <Content Include="App\Paginas\Adm\Faturamento\EmissaoNFE_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Faturamento\Faturamento.aspx" />
+    <Content Include="App\Paginas\Adm\Faturamento\Faturamento_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Faturamento\GerenciadorNFe.aspx" />
+    <Content Include="App\Paginas\Adm\Faturamento\ImportadorNFE.aspx" />
+    <Content Include="App\Paginas\Adm\Faturamento\ImportadorNFE_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Cartoes.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Comparativo_ContasPagar.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\ContasPagar.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\ContasPagar_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\ContasReceber.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\ContasReceber_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Dashboard_Adm.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Extrato_Bancario.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\FaturaCartoes.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Financeiro_Cliente.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Financeiro_Cliente_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\FluxoCaixa.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Provisoes.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Provisoes_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\RelatorioFinanceiro_Parceiros.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\RelatorioPagarReceber.aspx" />
+    <Content Include="App\Paginas\Adm\Fiscal\CodigoServico.aspx" />
+    <Content Include="App\Paginas\Adm\Fiscal\Regras.aspx" />
+    <Content Include="App\Paginas\Adm\Fiscal\RegrasICMS.aspx" />
+    <Content Include="App\Paginas\Adm\Fiscal\ServicoMunicipal.aspx" />
+    <Content Include="App\Paginas\Adm\Historico\ImportadorXML.aspx" />
+    <Content Include="App\Paginas\Adm\Historico\ImportadorXML_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CategoriaContasPagar.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CategoriaContasPagar_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CategoriaContasReceber.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CategoriaContasReceber_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CentroCusto.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CentroCusto_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CFOP.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\ContasBancarias.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\ContasBancarias_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CodigoContabil.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CodigoContabil_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Financeiro\Controle_Aprovacao_Pag.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\Controle_Metas.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\CST_IBS_CBS.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\IndicadorOperacao.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\Moedas.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\NBS.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\TipoCentroCusto.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\TipoCentroCusto_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Manutencao\Tipos_Gastos.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\Patrimonio.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\PatrimonioCategoria.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\PatrimonioCategoria_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\PatrimonioGrupo.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\PatrimonioGrupo_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\PatrimonioLocal.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\PatrimonioLocal_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Patrimonio\Patrimonio_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Pesquisa_NFe.aspx" />
+    <Content Include="App\Paginas\Adm\Reembolso_Consulta.aspx" />
+    <Content Include="App\Paginas\Adm\Reembolso_Detalhe.aspx" />
+    <Content Include="App\Paginas\Adm\Relatorio_Despesas.aspx" />
+    <Content Include="App\Paginas\Adm\Relatorio_Despesas_Detalhe.aspx" />
+    <Content Include="App\Paginas\Arquivos.aspx" />
+    <Content Include="App\Paginas\Atividades\Projetos.aspx" />
+    <Content Include="App\Paginas\Atividades\Projetos_Detalhe.aspx" />
+    <Content Include="App\Paginas\cftv.aspx" />
+    <Content Include="App\Paginas\Colaboradores_Exibicao.aspx" />
+    <Content Include="App\Paginas\Comercial\Cotacao.aspx" />
+    <Content Include="App\Paginas\Comercial\Cotacao_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\CRM.aspx" />
+    <Content Include="App\Paginas\Comercial\DashboardComercial.aspx" />
+    <Content Include="App\Paginas\Comercial\DashboardCRM.aspx" />
+    <Content Include="App\Paginas\Comercial\Escopo.aspx" />
+    <Content Include="App\Paginas\Comercial\Escopo_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\CategoriaEscopo.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\CategoriaEscopo_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\CategoriaVendas.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\CategoriaVendas_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\Segmentos.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\Segmentos_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\TipoOrcamento.aspx" />
+    <Content Include="App\Paginas\Comercial\Manutencao\TipoOrcamento_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\Orcamento.aspx" />
+    <Content Include="App\Paginas\Comercial\Orcamento_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\PosVendas.aspx" />
+    <Content Include="App\Paginas\Comercial\Tabelas.aspx" />
+    <Content Include="App\Paginas\Comercial\Tabelas_Detalhe.aspx" />
+    <Content Include="App\Paginas\Comercial\Tarefas_STSO.aspx" />
+    <Content Include="App\Paginas\COMEX\Manutencao\Ato_Concessorio.aspx" />
+    <Content Include="App\Paginas\COMEX\Manutencao\Ato_Concessorio_Detalhe.aspx" />
+    <Content Include="App\Paginas\COMEX\Resultados.aspx" />
+    <Content Include="App\Paginas\Compras\CotacaoCompras.aspx" />
+    <Content Include="App\Paginas\Compras\CotacaoCompras_Detalhe.aspx" />
+    <Content Include="App\Paginas\Download.aspx" />
+    <Content Include="App\Paginas\FAQ\FAQ_Consulta.aspx" />
+    <Content Include="App\Paginas\FAQ\FAQ_Detalhe.aspx" />
+    <Content Include="App\Paginas\FAQ\Forum_Consulta.aspx" />
+    <Content Include="App\Paginas\FAQ\Forum_Detalhe.aspx" />
+    <Content Include="App\Paginas\IA\Arquivos.aspx" />
+    <Content Include="App\Paginas\IA\Auditoria.aspx" />
+    <Content Include="App\Paginas\IA\Chat.aspx" />
+    <Content Include="App\Paginas\IA\Configuracao.aspx" />
+    <Content Include="App\Paginas\IA\Conhecimento.aspx" />
+    <Content Include="App\Paginas\IA\Ferramentas_Detalhe.aspx" />
+    <Content Include="App\Paginas\IA\Uso.aspx" />
+    <Content Include="App\Paginas\IA\Workflows.aspx" />
+    <Content Include="App\Paginas\IA\Workflow_Detalhe.aspx" />
+    <Content Include="App\Paginas\IT\ChangeLog.aspx" />
+    <Content Include="App\Paginas\IT\ChangeLog_Detalhe.aspx" />
+    <Content Include="App\Paginas\IT\Recursos.aspx" />
+    <Content Include="App\Paginas\IT\Recursos_Detalhe.aspx" />
+    <Content Include="App\Paginas\IT\teste.aspx" />
+    <Content Include="App\Paginas\LeitorAtividade.aspx" />
+    <Content Include="App\Paginas\Manutencao\ControleDadosAcesso.aspx" />
+    <Content Include="App\Paginas\Manutencao\Empresas.aspx" />
+    <Content Include="App\Paginas\Manutencao\Empresas_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Feriados.aspx" />
+    <Content Include="App\Paginas\Manutencao\Feriados_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\FilaImpressao.aspx" />
+    <Content Include="App\Paginas\Manutencao\Impressoras.aspx" />
+    <Content Include="App\Paginas\Manutencao\Recursos.aspx" />
+    <Content Include="App\Paginas\Manutencao\Recursos_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\RegistroVeiculo.aspx" />
+    <Content Include="App\Paginas\Manutencao\RegistroVeiculo_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\TipoArquivo.aspx" />
+    <Content Include="App\Paginas\Manutencao\TipoArquivo_Detalhe.aspx" />
+    <Content Include="App\Paginas\Mensagem\Mensagens.aspx" />
+    <Content Include="App\Paginas\Mensagem\Mensagens_Detalhe.aspx" />
+    <Content Include="App\main.master" />
+    <Content Include="App\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\Paginas\Kanban.aspx" />
+    <Content Include="App\Paginas\Manutencao\Usuarios_Perfil_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Usuarios_Perfil.aspx" />
+    <Content Include="App\Paginas\Manutencao\Parceiros_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Tarefas_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Tarefas.aspx" />
+    <Content Include="App\Paginas\Manutencao\Motivos_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Produtos.aspx" />
+    <Content Include="App\Paginas\Manutencao\Produtos_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Motivos.aspx" />
+    <Content Include="App\Paginas\OS\Manutencao\Procedimento.aspx" />
+    <Content Include="App\Paginas\OS\Manutencao\Procedimento_Detalhe.aspx" />
+    <Content Include="App\Paginas\OS\Manutencao\Procedimento_Tipo.aspx" />
+    <Content Include="App\Paginas\OS\Manutencao\Procedimento_Tipo_Detalhe.aspx" />
+    <Content Include="App\Paginas\OS\OrdemServico.aspx" />
+    <Content Include="App\Paginas\OS\OrdemServico_Detalhe.aspx" />
+    <Content Include="App\Paginas\PCP\Fabricacao_Detalhe.aspx" />
+    <Content Include="App\Paginas\Qualidade\Acervo.aspx" />
+    <Content Include="App\Paginas\Qualidade\Certificados.aspx" />
+    <Content Include="App\Paginas\Qualidade\Certificados_Detalhe.aspx" />
+    <Content Include="App\Paginas\Qualidade\Manutencao\InstrucaoTecnica.aspx" />
+    <Content Include="App\Paginas\Qualidade\Manutencao\InstrucaoTecnica_Detalhe.aspx" />
+    <Content Include="App\img\instrucaoTecnica_pdf.jpg" />
+    <Content Include="App\Paginas\Requisicao\TipoRequisicao.aspx" />
+    <Content Include="App\Paginas\Requisicao\TipoRequisicao_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Colaboradores_Pagamento.aspx" />
+    <Content Include="App\Paginas\RRHH\Colaboradores_Pagamento_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\ControleFerias.aspx" />
+    <Content Include="App\Paginas\RRHH\FechamentoPJ.aspx" />
+    <Content Include="App\Paginas\RRHH\GHE_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\GHE.aspx" />
+    <Content Include="App\Paginas\RRHH\Avaliacao\Avaliacao_Resultado.aspx" />
+    <Content Include="App\Paginas\RRHH\Avaliacao\Avaliacao.aspx" />
+    <Content Include="App\Paginas\RRHH\Avaliacao\Avaliacao_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Colaboradores.aspx" />
+    <Content Include="App\Paginas\RRHH\Colaboradores_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Consulta_Colaboradores.aspx" />
+    <Content Include="App\Paginas\RRHH\Dashboard_RRHH.aspx" />
+    <Content Include="App\Paginas\RRHH\Documentos_RRHH.aspx" />
+    <Content Include="App\Paginas\RRHH\EntregaEPI.aspx" />
+    <Content Include="App\Paginas\RRHH\EntregaEPI_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Funcoes.aspx" />
+    <Content Include="App\Paginas\RRHH\Funcoes_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Manutencao_NR.aspx" />
+    <Content Include="App\Paginas\RRHH\OcorrenciasElogios.aspx" />
+    <Content Include="App\Paginas\RRHH\OcorrenciasElogios_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\PlanoSaude.aspx" />
+    <Content Include="App\Paginas\RRHH\PlanosSSTT.aspx" />
+    <Content Include="App\Paginas\RRHH\PlanosSSTT_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\RelatorioSeguro.aspx" />
+    <Content Include="App\Paginas\RRHH\Seguro.aspx" />
+    <Content Include="App\Paginas\RRHH\Setor.aspx" />
+    <Content Include="App\Paginas\RRHH\RelatorioBeneficios_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Solicitacao.aspx" />
+    <Content Include="App\Paginas\RRHH\Solicitacao_Detalhe.aspx" />
+    <Content Include="App\Paginas\RRHH\Usuario_Colaborador.aspx" />
+    <Content Include="App\Paginas\Tarefas.aspx" />
+    <Content Include="App\Paginas\Pedidos_Detalhe_Acoes.aspx" />
+    <Content Include="App\Paginas\WMS\ConsultarLM.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Sistemas.aspx" />
+    <Content Include="App\Paginas\WMS\Rastreabilidade.aspx" />
+    <Content Include="App\Paginas\WMS\RelatorioMovimentacao.aspx" />
+    <Content Include="App\Paginas\WMS\SeparacaoPedido.aspx" />
+    <Content Include="App\Paginas\WMS\SeparacaoPedido_Detalhe.aspx" />
+    <Content Include="App\Reports\Relatorio_Despesas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\RelatorioMovimentacao.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\NF-e.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Relatório.rdlc" />
+    <Content Include="App\Reports\NF-s.rdlc" />
+    <Content Include="App\Reports\Advertencia.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Ocorrencia.rdlc" />
+    <Content Include="App\Reports\Ferias.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Cotacao.rdlc" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\langs\README.md" />
+    <Content Include="App\JS\tinymce_v8_3_2\js\tinymce\license.md" />
+    <Content Include="App\Reports\Orcamento_EN.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\css\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="App\css\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App\css\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="App\css\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="App\css\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="API\Agenda.ashx" />
+    <Content Include="API\Colaborador.ashx" />
+    <Content Include="API\Conversas.ashx" />
+    <Content Include="API\DepartamentosUsuarios.ashx" />
+    <Content Include="API\Despesas.ashx" />
+    <Content Include="API\Login.ashx" />
+    <Content Include="API\Mensagens.ashx" />
+    <Content Include="API\Ponto.ashx" />
+    <Content Include="API\Solicitacoes.ashx" />
+    <Content Include="API\Veiculos.ashx" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Publicação Local.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App\Controles\ComboAtivo.ascx" />
+    <Content Include="App\Controles\MensagemPagina.ascx" />
+    <Content Include="App\Controles\PainelAtualizacao.ascx" />
+    <Content Include="App\Paginas\Clientes.aspx" />
+    <Content Include="App\Paginas\Manutencao\Parceiros.aspx" />
+    <Content Include="App\Paginas\Manutencao\CondicaodePagamento_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Status.aspx" />
+    <Content Include="App\Paginas\Manutencao\CondicaodePagamento.aspx" />
+    <Content Include="App\Paginas\Manutencao\Fluxo_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Fluxo.aspx" />
+    <Content Include="App\Paginas\Manutencao\Departamentos.aspx" />
+    <Content Include="App\Paginas\Manutencao\Status_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Departamentos_Detalhe.aspx" />
+    <Content Include="App\Paginas\Manutencao\Usuarios.aspx" />
+    <Content Include="App\Paginas\Manutencao\Usuarios_Detalhe.aspx" />
+    <Content Include="App\Paginas\Pedidos_Detalhe_Tarefas.aspx" />
+    <Content Include="App\Paginas\Pedidos_Detalhe.aspx" />
+    <Content Include="App\Paginas\Pedidos.aspx" />
+    <Content Include="App\Paginas\Requisicao\Requisicao.aspx" />
+    <Content Include="App\Paginas\Requisicao\Requisicao_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\ConsultaSaldo.aspx" />
+    <Content Include="App\Paginas\WMS\ConsultaSaldo_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Embalagem.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\CEST.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\CEST_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Envio_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Embalagem_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Familia_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Familia.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Grupo.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Grupo_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\ImportadorSaldo.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\ImportadorSaldo_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\LocalArmazenamento_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\LocalArmazenamento.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\NCM.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\NCM_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\NCM_Importar.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\TipoProduto.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\TipoProduto_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Unidades.aspx" />
+    <Content Include="App\Paginas\WMS\Manutencao\Unidades_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\Movimentacao_Consulta.aspx" />
+    <Content Include="App\Paginas\WMS\Movimentacao_Detalhe.aspx" />
+    <Content Include="App\Paginas\WMS\OPI.aspx" />
+    <Content Include="App\Paginas\WMS\OPI_Detalhe.aspx" />
+    <Content Include="App\PermissaoNegada.aspx" />
+    <Content Include="App\Reports\EntregaEPI.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Excel_Geral.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Excel_Pedidos_LM.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Invoice_PedidoCompra.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\PedidoCompra_Internacional.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Pedido_Compras.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\teste_API.aspx" />
+    <Content Include="bin\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="Default.aspx" />
+    <Content Include="App\Login.aspx" />
+    <Content Include="App\Controles\BreadCrumb.ascx" />
+    <Content Include="App\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App\Dashboard.aspx" />
+    <Content Include="App\Default.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Agenda.ashx.cs">
+      <DependentUpon>Agenda.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Autenticacao.cs" />
+    <Compile Include="API\Colaborador.ashx.cs">
+      <DependentUpon>Colaborador.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Conversas.ashx.cs">
+      <DependentUpon>Conversas.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\DepartamentosUsuarios.ashx.cs">
+      <DependentUpon>DepartamentosUsuarios.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Despesas.ashx.cs">
+      <DependentUpon>Despesas.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\IA_ArquivoUpload.aspx.cs">
+      <DependentUpon>IA_ArquivoUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="API\IA_ArquivoUpload.aspx.designer.cs">
+      <DependentUpon>IA_ArquivoUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API\IA_Chat.aspx.cs">
+      <DependentUpon>IA_Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="API\IA_Chat.aspx.designer.cs">
+      <DependentUpon>IA_Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API\IA_Stream.aspx.cs">
+      <DependentUpon>IA_Stream.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="API\IA_Stream.aspx.designer.cs">
+      <DependentUpon>IA_Stream.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Mensagens.ashx.cs">
+      <DependentUpon>Mensagens.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Pagina_Ajax.aspx.cs">
+      <DependentUpon>Pagina_Ajax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="API\Pagina_Ajax.aspx.designer.cs">
+      <DependentUpon>Pagina_Ajax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API\botpress.aspx.cs">
+      <DependentUpon>botpress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="API\botpress.aspx.designer.cs">
+      <DependentUpon>botpress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Ponto.ashx.cs">
+      <DependentUpon>Ponto.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Solicitacoes.ashx.cs">
+      <DependentUpon>Solicitacoes.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="API\Veiculos.ashx.cs">
+      <DependentUpon>Veiculos.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\AddLoteSerie.ascx.cs">
+      <DependentUpon>AddLoteSerie.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\AddLoteSerie.ascx.designer.cs">
+      <DependentUpon>AddLoteSerie.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\AvisosInformacoes.ascx.cs">
+      <DependentUpon>AvisosInformacoes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\AvisosInformacoes.ascx.designer.cs">
+      <DependentUpon>AvisosInformacoes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Calendario.ascx.cs">
+      <DependentUpon>Calendario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Calendario.ascx.designer.cs">
+      <DependentUpon>Calendario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ChartControl.ascx.cs">
+      <DependentUpon>ChartControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ChartControl.ascx.designer.cs">
+      <DependentUpon>ChartControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ComboAtivo.ascx.cs">
+      <DependentUpon>ComboAtivo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ComboAtivo.ascx.designer.cs">
+      <DependentUpon>ComboAtivo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ContadorMensagem.ascx.cs">
+      <DependentUpon>ContadorMensagem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ContadorMensagem.ascx.designer.cs">
+      <DependentUpon>ContadorMensagem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Controle_CategoriasCC.ascx.cs">
+      <DependentUpon>Controle_CategoriasCC.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Controle_CategoriasCC.ascx.designer.cs">
+      <DependentUpon>Controle_CategoriasCC.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\DetalheModalProduto.ascx.cs">
+      <DependentUpon>DetalheModalProduto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\DetalheModalProduto.ascx.designer.cs">
+      <DependentUpon>DetalheModalProduto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\DropDownList_Padrao.ascx.cs">
+      <DependentUpon>DropDownList_Padrao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\DropDownList_Padrao.ascx.designer.cs">
+      <DependentUpon>DropDownList_Padrao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ExcelImportar.ascx.cs">
+      <DependentUpon>ExcelImportar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ExcelImportar.ascx.designer.cs">
+      <DependentUpon>ExcelImportar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ExportarExcel.ascx.cs">
+      <DependentUpon>ExportarExcel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ExportarExcel.ascx.designer.cs">
+      <DependentUpon>ExportarExcel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\FiltroPesquisa.ascx.cs">
+      <DependentUpon>FiltroPesquisa.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\FiltroPesquisa.ascx.designer.cs">
+      <DependentUpon>FiltroPesquisa.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\GerenciadorMembrosModal.ascx.cs">
+      <DependentUpon>GerenciadorMembrosModal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\GerenciadorMembrosModal.ascx.designer.cs">
+      <DependentUpon>GerenciadorMembrosModal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\IA_Widget.ascx.cs">
+      <DependentUpon>IA_Widget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\IA_Widget.ascx.designer.cs">
+      <DependentUpon>IA_Widget.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ImportadorItensModal.ascx.cs">
+      <DependentUpon>ImportadorItensModal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ImportadorItensModal.ascx.designer.cs">
+      <DependentUpon>ImportadorItensModal.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\LeitorQuagga.ascx.cs">
+      <DependentUpon>LeitorQuagga.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\LeitorQuagga.ascx.designer.cs">
+      <DependentUpon>LeitorQuagga.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Manual.ascx.cs">
+      <DependentUpon>Manual.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Manual.ascx.designer.cs">
+      <DependentUpon>Manual.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\MensagemPagina.ascx.cs">
+      <DependentUpon>MensagemPagina.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\MensagemPagina.ascx.designer.cs">
+      <DependentUpon>MensagemPagina.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\MensagensDropdown.ascx.cs">
+      <DependentUpon>MensagensDropdown.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\MensagensDropdown.ascx.designer.cs">
+      <DependentUpon>MensagensDropdown.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ModalUsuario.ascx.cs">
+      <DependentUpon>ModalUsuario.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ModalUsuario.ascx.designer.cs">
+      <DependentUpon>ModalUsuario.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\MultiSelecao.ascx.cs">
+      <DependentUpon>MultiSelecao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\MultiSelecao.ascx.designer.cs">
+      <DependentUpon>MultiSelecao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\PainelAtualizacao.ascx.cs">
+      <DependentUpon>PainelAtualizacao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\PainelAtualizacao.ascx.designer.cs">
+      <DependentUpon>PainelAtualizacao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Pesquisa_Colaborador.ascx.cs">
+      <DependentUpon>Pesquisa_Colaborador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Pesquisa_Colaborador.ascx.designer.cs">
+      <DependentUpon>Pesquisa_Colaborador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Pesquisa_Parceiros.ascx.cs">
+      <DependentUpon>Pesquisa_Parceiros.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Pesquisa_Parceiros.ascx.designer.cs">
+      <DependentUpon>Pesquisa_Parceiros.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\ProdutosImportador.ascx.cs">
+      <DependentUpon>ProdutosImportador.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\ProdutosImportador.ascx.designer.cs">
+      <DependentUpon>ProdutosImportador.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Recursos.ascx.cs">
+      <DependentUpon>Recursos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Recursos.ascx.designer.cs">
+      <DependentUpon>Recursos.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Referencia_MesAno.ascx.cs">
+      <DependentUpon>Referencia_MesAno.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Referencia_MesAno.ascx.designer.cs">
+      <DependentUpon>Referencia_MesAno.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\SwitchAtivo.ascx.cs">
+      <DependentUpon>SwitchAtivo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\SwitchAtivo.ascx.designer.cs">
+      <DependentUpon>SwitchAtivo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\TagDropdownControl.ascx.cs">
+      <DependentUpon>TagDropdownControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\TagDropdownControl.ascx.designer.cs">
+      <DependentUpon>TagDropdownControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\TextBox_Padrao.ascx.cs">
+      <DependentUpon>TextBox_Padrao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\TextBox_Padrao.ascx.designer.cs">
+      <DependentUpon>TextBox_Padrao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\TimerPicker.ascx.cs">
+      <DependentUpon>TimerPicker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\TimerPicker.ascx.designer.cs">
+      <DependentUpon>TimerPicker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\UpdatePanel_Loading.ascx.cs">
+      <DependentUpon>UpdatePanel_Loading.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\UpdatePanel_Loading.ascx.designer.cs">
+      <DependentUpon>UpdatePanel_Loading.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\UploadArquivo_Padrao.ascx.cs">
+      <DependentUpon>UploadArquivo_Padrao.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\UploadArquivo_Padrao.ascx.designer.cs">
+      <DependentUpon>UploadArquivo_Padrao.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Controles\Upload_Arquivo.ascx.cs">
+      <DependentUpon>Upload_Arquivo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\Upload_Arquivo.ascx.designer.cs">
+      <DependentUpon>Upload_Arquivo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\ExibeArquivo.aspx.cs">
+      <DependentUpon>ExibeArquivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\ExibeArquivo.aspx.designer.cs">
+      <DependentUpon>ExibeArquivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\main.master.designer.cs">
+      <DependentUpon>main.master</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\EmissaoNFE.aspx.cs">
+      <DependentUpon>EmissaoNFE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\EmissaoNFE.aspx.designer.cs">
+      <DependentUpon>EmissaoNFE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\EmissaoNFE_Detalhe.aspx.cs">
+      <DependentUpon>EmissaoNFE_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\EmissaoNFE_Detalhe.aspx.designer.cs">
+      <DependentUpon>EmissaoNFE_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\Faturamento.aspx.cs">
+      <DependentUpon>Faturamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\Faturamento.aspx.designer.cs">
+      <DependentUpon>Faturamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\Faturamento_Detalhe.aspx.cs">
+      <DependentUpon>Faturamento_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\Faturamento_Detalhe.aspx.designer.cs">
+      <DependentUpon>Faturamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\GerenciadorNFe.aspx.cs">
+      <DependentUpon>GerenciadorNFe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\GerenciadorNFe.aspx.designer.cs">
+      <DependentUpon>GerenciadorNFe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\ImportadorNFE.aspx.cs">
+      <DependentUpon>ImportadorNFE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\ImportadorNFE.aspx.designer.cs">
+      <DependentUpon>ImportadorNFE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\ImportadorNFE_Detalhe.aspx.cs">
+      <DependentUpon>ImportadorNFE_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Faturamento\ImportadorNFE_Detalhe.aspx.designer.cs">
+      <DependentUpon>ImportadorNFE_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Cartoes.aspx.cs">
+      <DependentUpon>Cartoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Cartoes.aspx.designer.cs">
+      <DependentUpon>Cartoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Comparativo_ContasPagar.aspx.cs">
+      <DependentUpon>Comparativo_ContasPagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Comparativo_ContasPagar.aspx.designer.cs">
+      <DependentUpon>Comparativo_ContasPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasPagar.aspx.cs">
+      <DependentUpon>ContasPagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasPagar.aspx.designer.cs">
+      <DependentUpon>ContasPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasPagar_Detalhe.aspx.cs">
+      <DependentUpon>ContasPagar_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasPagar_Detalhe.aspx.designer.cs">
+      <DependentUpon>ContasPagar_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasReceber.aspx.cs">
+      <DependentUpon>ContasReceber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasReceber.aspx.designer.cs">
+      <DependentUpon>ContasReceber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasReceber_Detalhe.aspx.cs">
+      <DependentUpon>ContasReceber_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\ContasReceber_Detalhe.aspx.designer.cs">
+      <DependentUpon>ContasReceber_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Dashboard_Adm.aspx.cs">
+      <DependentUpon>Dashboard_Adm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Dashboard_Adm.aspx.designer.cs">
+      <DependentUpon>Dashboard_Adm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Extrato_Bancario.aspx.cs">
+      <DependentUpon>Extrato_Bancario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Extrato_Bancario.aspx.designer.cs">
+      <DependentUpon>Extrato_Bancario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\FaturaCartoes.aspx.cs">
+      <DependentUpon>FaturaCartoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\FaturaCartoes.aspx.designer.cs">
+      <DependentUpon>FaturaCartoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Financeiro_Cliente.aspx.cs">
+      <DependentUpon>Financeiro_Cliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Financeiro_Cliente.aspx.designer.cs">
+      <DependentUpon>Financeiro_Cliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Financeiro_Cliente_Detalhe.aspx.cs">
+      <DependentUpon>Financeiro_Cliente_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Financeiro_Cliente_Detalhe.aspx.designer.cs">
+      <DependentUpon>Financeiro_Cliente_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\FluxoCaixa.aspx.cs">
+      <DependentUpon>FluxoCaixa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\FluxoCaixa.aspx.designer.cs">
+      <DependentUpon>FluxoCaixa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Provisoes.aspx.cs">
+      <DependentUpon>Provisoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Provisoes.aspx.designer.cs">
+      <DependentUpon>Provisoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Provisoes_Detalhe.aspx.cs">
+      <DependentUpon>Provisoes_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Provisoes_Detalhe.aspx.designer.cs">
+      <DependentUpon>Provisoes_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\RelatorioFinanceiro_Parceiros.aspx.cs">
+      <DependentUpon>RelatorioFinanceiro_Parceiros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\RelatorioFinanceiro_Parceiros.aspx.designer.cs">
+      <DependentUpon>RelatorioFinanceiro_Parceiros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\RelatorioPagarReceber.aspx.cs">
+      <DependentUpon>RelatorioPagarReceber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\RelatorioPagarReceber.aspx.designer.cs">
+      <DependentUpon>RelatorioPagarReceber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\CodigoServico.aspx.cs">
+      <DependentUpon>CodigoServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\CodigoServico.aspx.designer.cs">
+      <DependentUpon>CodigoServico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\Regras.aspx.cs">
+      <DependentUpon>Regras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\Regras.aspx.designer.cs">
+      <DependentUpon>Regras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\RegrasICMS.aspx.cs">
+      <DependentUpon>RegrasICMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\RegrasICMS.aspx.designer.cs">
+      <DependentUpon>RegrasICMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\ServicoMunicipal.aspx.cs">
+      <DependentUpon>ServicoMunicipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Fiscal\ServicoMunicipal.aspx.designer.cs">
+      <DependentUpon>ServicoMunicipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Historico\ImportadorXML.aspx.cs">
+      <DependentUpon>ImportadorXML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Historico\ImportadorXML.aspx.designer.cs">
+      <DependentUpon>ImportadorXML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Historico\ImportadorXML_Detalhe.aspx.cs">
+      <DependentUpon>ImportadorXML_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Historico\ImportadorXML_Detalhe.aspx.designer.cs">
+      <DependentUpon>ImportadorXML_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasPagar.aspx.cs">
+      <DependentUpon>CategoriaContasPagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasPagar.aspx.designer.cs">
+      <DependentUpon>CategoriaContasPagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasPagar_Detalhe.aspx.cs">
+      <DependentUpon>CategoriaContasPagar_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasPagar_Detalhe.aspx.designer.cs">
+      <DependentUpon>CategoriaContasPagar_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasReceber.aspx.cs">
+      <DependentUpon>CategoriaContasReceber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasReceber.aspx.designer.cs">
+      <DependentUpon>CategoriaContasReceber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasReceber_Detalhe.aspx.cs">
+      <DependentUpon>CategoriaContasReceber_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CategoriaContasReceber_Detalhe.aspx.designer.cs">
+      <DependentUpon>CategoriaContasReceber_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CentroCusto.aspx.cs">
+      <DependentUpon>CentroCusto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CentroCusto.aspx.designer.cs">
+      <DependentUpon>CentroCusto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CentroCusto_Detalhe.aspx.cs">
+      <DependentUpon>CentroCusto_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CentroCusto_Detalhe.aspx.designer.cs">
+      <DependentUpon>CentroCusto_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CFOP.aspx.cs">
+      <DependentUpon>CFOP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CFOP.aspx.designer.cs">
+      <DependentUpon>CFOP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\ContasBancarias.aspx.cs">
+      <DependentUpon>ContasBancarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\ContasBancarias.aspx.designer.cs">
+      <DependentUpon>ContasBancarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\ContasBancarias_Detalhe.aspx.cs">
+      <DependentUpon>ContasBancarias_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\ContasBancarias_Detalhe.aspx.designer.cs">
+      <DependentUpon>ContasBancarias_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CodigoContabil.aspx.cs">
+      <DependentUpon>CodigoContabil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CodigoContabil.aspx.designer.cs">
+      <DependentUpon>CodigoContabil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CodigoContabil_Detalhe.aspx.cs">
+      <DependentUpon>CodigoContabil_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CodigoContabil_Detalhe.aspx.designer.cs">
+      <DependentUpon>CodigoContabil_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Controle_Aprovacao_Pag.aspx.cs">
+      <DependentUpon>Controle_Aprovacao_Pag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Financeiro\Controle_Aprovacao_Pag.aspx.designer.cs">
+      <DependentUpon>Controle_Aprovacao_Pag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\Controle_Metas.aspx.cs">
+      <DependentUpon>Controle_Metas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\Controle_Metas.aspx.designer.cs">
+      <DependentUpon>Controle_Metas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CST_IBS_CBS.aspx.cs">
+      <DependentUpon>CST_IBS_CBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\CST_IBS_CBS.aspx.designer.cs">
+      <DependentUpon>CST_IBS_CBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\IndicadorOperacao.aspx.cs">
+      <DependentUpon>IndicadorOperacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\IndicadorOperacao.aspx.designer.cs">
+      <DependentUpon>IndicadorOperacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\Moedas.aspx.cs">
+      <DependentUpon>Moedas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\Moedas.aspx.designer.cs">
+      <DependentUpon>Moedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\NBS.aspx.cs">
+      <DependentUpon>NBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\NBS.aspx.designer.cs">
+      <DependentUpon>NBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\TipoCentroCusto.aspx.cs">
+      <DependentUpon>TipoCentroCusto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\TipoCentroCusto.aspx.designer.cs">
+      <DependentUpon>TipoCentroCusto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\TipoCentroCusto_Detalhe.aspx.cs">
+      <DependentUpon>TipoCentroCusto_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\TipoCentroCusto_Detalhe.aspx.designer.cs">
+      <DependentUpon>TipoCentroCusto_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\Tipos_Gastos.aspx.cs">
+      <DependentUpon>Tipos_Gastos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Manutencao\Tipos_Gastos.aspx.designer.cs">
+      <DependentUpon>Tipos_Gastos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\Patrimonio.aspx.cs">
+      <DependentUpon>Patrimonio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\Patrimonio.aspx.designer.cs">
+      <DependentUpon>Patrimonio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioCategoria.aspx.cs">
+      <DependentUpon>PatrimonioCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioCategoria.aspx.designer.cs">
+      <DependentUpon>PatrimonioCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioCategoria_Detalhe.aspx.cs">
+      <DependentUpon>PatrimonioCategoria_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioCategoria_Detalhe.aspx.designer.cs">
+      <DependentUpon>PatrimonioCategoria_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioGrupo.aspx.cs">
+      <DependentUpon>PatrimonioGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioGrupo.aspx.designer.cs">
+      <DependentUpon>PatrimonioGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioGrupo_Detalhe.aspx.cs">
+      <DependentUpon>PatrimonioGrupo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioGrupo_Detalhe.aspx.designer.cs">
+      <DependentUpon>PatrimonioGrupo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioLocal.aspx.cs">
+      <DependentUpon>PatrimonioLocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioLocal.aspx.designer.cs">
+      <DependentUpon>PatrimonioLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioLocal_Detalhe.aspx.cs">
+      <DependentUpon>PatrimonioLocal_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\PatrimonioLocal_Detalhe.aspx.designer.cs">
+      <DependentUpon>PatrimonioLocal_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\Patrimonio_Detalhe.aspx.cs">
+      <DependentUpon>Patrimonio_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Patrimonio\Patrimonio_Detalhe.aspx.designer.cs">
+      <DependentUpon>Patrimonio_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Pesquisa_NFe.aspx.cs">
+      <DependentUpon>Pesquisa_NFe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Pesquisa_NFe.aspx.designer.cs">
+      <DependentUpon>Pesquisa_NFe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Reembolso_Consulta.aspx.cs">
+      <DependentUpon>Reembolso_Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Reembolso_Consulta.aspx.designer.cs">
+      <DependentUpon>Reembolso_Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Reembolso_Detalhe.aspx.cs">
+      <DependentUpon>Reembolso_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Reembolso_Detalhe.aspx.designer.cs">
+      <DependentUpon>Reembolso_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Relatorio_Despesas.aspx.cs">
+      <DependentUpon>Relatorio_Despesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Relatorio_Despesas.aspx.designer.cs">
+      <DependentUpon>Relatorio_Despesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Relatorio_Despesas_Detalhe.aspx.cs">
+      <DependentUpon>Relatorio_Despesas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Adm\Relatorio_Despesas_Detalhe.aspx.designer.cs">
+      <DependentUpon>Relatorio_Despesas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Arquivos.aspx.cs">
+      <DependentUpon>Arquivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Arquivos.aspx.designer.cs">
+      <DependentUpon>Arquivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Atividades\Projetos.aspx.cs">
+      <DependentUpon>Projetos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Atividades\Projetos.aspx.designer.cs">
+      <DependentUpon>Projetos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Atividades\Projetos_Detalhe.aspx.cs">
+      <DependentUpon>Projetos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Atividades\Projetos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Projetos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\cftv.aspx.cs">
+      <DependentUpon>cftv.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\cftv.aspx.designer.cs">
+      <DependentUpon>cftv.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Colaboradores_Exibicao.aspx.cs">
+      <DependentUpon>Colaboradores_Exibicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Colaboradores_Exibicao.aspx.designer.cs">
+      <DependentUpon>Colaboradores_Exibicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Cotacao.aspx.cs">
+      <DependentUpon>Cotacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Cotacao.aspx.designer.cs">
+      <DependentUpon>Cotacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Cotacao_Detalhe.aspx.cs">
+      <DependentUpon>Cotacao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Cotacao_Detalhe.aspx.designer.cs">
+      <DependentUpon>Cotacao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\CRM.aspx.cs">
+      <DependentUpon>CRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\CRM.aspx.designer.cs">
+      <DependentUpon>CRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\DashboardComercial.aspx.cs">
+      <DependentUpon>DashboardComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\DashboardComercial.aspx.designer.cs">
+      <DependentUpon>DashboardComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\DashboardCRM.aspx.cs">
+      <DependentUpon>DashboardCRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\DashboardCRM.aspx.designer.cs">
+      <DependentUpon>DashboardCRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Escopo.aspx.cs">
+      <DependentUpon>Escopo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Escopo.aspx.designer.cs">
+      <DependentUpon>Escopo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Escopo_Detalhe.aspx.cs">
+      <DependentUpon>Escopo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Escopo_Detalhe.aspx.designer.cs">
+      <DependentUpon>Escopo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaEscopo.aspx.cs">
+      <DependentUpon>CategoriaEscopo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaEscopo.aspx.designer.cs">
+      <DependentUpon>CategoriaEscopo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaEscopo_Detalhe.aspx.cs">
+      <DependentUpon>CategoriaEscopo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaEscopo_Detalhe.aspx.designer.cs">
+      <DependentUpon>CategoriaEscopo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaVendas.aspx.cs">
+      <DependentUpon>CategoriaVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaVendas.aspx.designer.cs">
+      <DependentUpon>CategoriaVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaVendas_Detalhe.aspx.cs">
+      <DependentUpon>CategoriaVendas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\CategoriaVendas_Detalhe.aspx.designer.cs">
+      <DependentUpon>CategoriaVendas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\Segmentos.aspx.cs">
+      <DependentUpon>Segmentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\Segmentos.aspx.designer.cs">
+      <DependentUpon>Segmentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\Segmentos_Detalhe.aspx.cs">
+      <DependentUpon>Segmentos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\Segmentos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Segmentos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\TipoOrcamento.aspx.cs">
+      <DependentUpon>TipoOrcamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\TipoOrcamento.aspx.designer.cs">
+      <DependentUpon>TipoOrcamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\TipoOrcamento_Detalhe.aspx.cs">
+      <DependentUpon>TipoOrcamento_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Manutencao\TipoOrcamento_Detalhe.aspx.designer.cs">
+      <DependentUpon>TipoOrcamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Orcamento.aspx.cs">
+      <DependentUpon>Orcamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Orcamento.aspx.designer.cs">
+      <DependentUpon>Orcamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Orcamento_Detalhe.aspx.cs">
+      <DependentUpon>Orcamento_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Orcamento_Detalhe.aspx.designer.cs">
+      <DependentUpon>Orcamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\PosVendas.aspx.cs">
+      <DependentUpon>PosVendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\PosVendas.aspx.designer.cs">
+      <DependentUpon>PosVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Tabelas.aspx.cs">
+      <DependentUpon>Tabelas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Tabelas.aspx.designer.cs">
+      <DependentUpon>Tabelas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Tabelas_Detalhe.aspx.cs">
+      <DependentUpon>Tabelas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Tabelas_Detalhe.aspx.designer.cs">
+      <DependentUpon>Tabelas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Tarefas_STSO.aspx.cs">
+      <DependentUpon>Tarefas_STSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Comercial\Tarefas_STSO.aspx.designer.cs">
+      <DependentUpon>Tarefas_STSO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\COMEX\Manutencao\Ato_Concessorio.aspx.cs">
+      <DependentUpon>Ato_Concessorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\COMEX\Manutencao\Ato_Concessorio.aspx.designer.cs">
+      <DependentUpon>Ato_Concessorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\COMEX\Manutencao\Ato_Concessorio_Detalhe.aspx.cs">
+      <DependentUpon>Ato_Concessorio_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\COMEX\Manutencao\Ato_Concessorio_Detalhe.aspx.designer.cs">
+      <DependentUpon>Ato_Concessorio_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\COMEX\Resultados.aspx.cs">
+      <DependentUpon>Resultados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\COMEX\Resultados.aspx.designer.cs">
+      <DependentUpon>Resultados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Compras\CotacaoCompras.aspx.cs">
+      <DependentUpon>CotacaoCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Compras\CotacaoCompras.aspx.designer.cs">
+      <DependentUpon>CotacaoCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Compras\CotacaoCompras_Detalhe.aspx.cs">
+      <DependentUpon>CotacaoCompras_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Compras\CotacaoCompras_Detalhe.aspx.designer.cs">
+      <DependentUpon>CotacaoCompras_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\FAQ_Consulta.aspx.cs">
+      <DependentUpon>FAQ_Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\FAQ_Consulta.aspx.designer.cs">
+      <DependentUpon>FAQ_Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\FAQ_Detalhe.aspx.cs">
+      <DependentUpon>FAQ_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\FAQ_Detalhe.aspx.designer.cs">
+      <DependentUpon>FAQ_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\Forum_Consulta.aspx.cs">
+      <DependentUpon>Forum_Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\Forum_Consulta.aspx.designer.cs">
+      <DependentUpon>Forum_Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\Forum_Detalhe.aspx.cs">
+      <DependentUpon>Forum_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\FAQ\Forum_Detalhe.aspx.designer.cs">
+      <DependentUpon>Forum_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Arquivos.aspx.cs">
+      <DependentUpon>Arquivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Arquivos.aspx.designer.cs">
+      <DependentUpon>Arquivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Auditoria.aspx.cs">
+      <DependentUpon>Auditoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Auditoria.aspx.designer.cs">
+      <DependentUpon>Auditoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Chat.aspx.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Chat.aspx.designer.cs">
+      <DependentUpon>Chat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Configuracao.aspx.cs">
+      <DependentUpon>Configuracao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Configuracao.aspx.designer.cs">
+      <DependentUpon>Configuracao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Conhecimento.aspx.cs">
+      <DependentUpon>Conhecimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Conhecimento.aspx.designer.cs">
+      <DependentUpon>Conhecimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Ferramentas_Detalhe.aspx.cs">
+      <DependentUpon>Ferramentas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Ferramentas_Detalhe.aspx.designer.cs">
+      <DependentUpon>Ferramentas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Uso.aspx.cs">
+      <DependentUpon>Uso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Uso.aspx.designer.cs">
+      <DependentUpon>Uso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Workflows.aspx.cs">
+      <DependentUpon>Workflows.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Workflows.aspx.designer.cs">
+      <DependentUpon>Workflows.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Workflow_Detalhe.aspx.cs">
+      <DependentUpon>Workflow_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IA\Workflow_Detalhe.aspx.designer.cs">
+      <DependentUpon>Workflow_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IT\ChangeLog.aspx.cs">
+      <DependentUpon>ChangeLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IT\ChangeLog.aspx.designer.cs">
+      <DependentUpon>ChangeLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IT\ChangeLog_Detalhe.aspx.cs">
+      <DependentUpon>ChangeLog_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IT\ChangeLog_Detalhe.aspx.designer.cs">
+      <DependentUpon>ChangeLog_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IT\Recursos.aspx.cs">
+      <DependentUpon>Recursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IT\Recursos.aspx.designer.cs">
+      <DependentUpon>Recursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IT\Recursos_Detalhe.aspx.cs">
+      <DependentUpon>Recursos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IT\Recursos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Recursos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\IT\teste.aspx.cs">
+      <DependentUpon>teste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\IT\teste.aspx.designer.cs">
+      <DependentUpon>teste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\LeitorAtividade.aspx.cs">
+      <DependentUpon>LeitorAtividade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\LeitorAtividade.aspx.designer.cs">
+      <DependentUpon>LeitorAtividade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\ControleDadosAcesso.aspx.cs">
+      <DependentUpon>ControleDadosAcesso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\ControleDadosAcesso.aspx.designer.cs">
+      <DependentUpon>ControleDadosAcesso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Empresas.aspx.cs">
+      <DependentUpon>Empresas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Empresas.aspx.designer.cs">
+      <DependentUpon>Empresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Empresas_Detalhe.aspx.cs">
+      <DependentUpon>Empresas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Empresas_Detalhe.aspx.designer.cs">
+      <DependentUpon>Empresas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Feriados.aspx.cs">
+      <DependentUpon>Feriados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Feriados.aspx.designer.cs">
+      <DependentUpon>Feriados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Feriados_Detalhe.aspx.cs">
+      <DependentUpon>Feriados_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Feriados_Detalhe.aspx.designer.cs">
+      <DependentUpon>Feriados_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\FilaImpressao.aspx.cs">
+      <DependentUpon>FilaImpressao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\FilaImpressao.aspx.designer.cs">
+      <DependentUpon>FilaImpressao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Impressoras.aspx.cs">
+      <DependentUpon>Impressoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Impressoras.aspx.designer.cs">
+      <DependentUpon>Impressoras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Recursos.aspx.cs">
+      <DependentUpon>Recursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Recursos.aspx.designer.cs">
+      <DependentUpon>Recursos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Recursos_Detalhe.aspx.cs">
+      <DependentUpon>Recursos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Recursos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Recursos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\RegistroVeiculo.aspx.cs">
+      <DependentUpon>RegistroVeiculo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\RegistroVeiculo.aspx.designer.cs">
+      <DependentUpon>RegistroVeiculo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\RegistroVeiculo_Detalhe.aspx.cs">
+      <DependentUpon>RegistroVeiculo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\RegistroVeiculo_Detalhe.aspx.designer.cs">
+      <DependentUpon>RegistroVeiculo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\TipoArquivo.aspx.cs">
+      <DependentUpon>TipoArquivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\TipoArquivo.aspx.designer.cs">
+      <DependentUpon>TipoArquivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\TipoArquivo_Detalhe.aspx.cs">
+      <DependentUpon>TipoArquivo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\TipoArquivo_Detalhe.aspx.designer.cs">
+      <DependentUpon>TipoArquivo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Mensagem\Mensagens.aspx.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Mensagem\Mensagens.aspx.designer.cs">
+      <DependentUpon>Mensagens.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Mensagem\Mensagens_Detalhe.aspx.cs">
+      <DependentUpon>Mensagens_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Mensagem\Mensagens_Detalhe.aspx.designer.cs">
+      <DependentUpon>Mensagens_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Clientes.aspx.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Clientes.aspx.designer.cs">
+      <DependentUpon>Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Kanban.aspx.cs">
+      <DependentUpon>Kanban.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Kanban.aspx.designer.cs">
+      <DependentUpon>Kanban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios_Perfil_Detalhe.aspx.cs">
+      <DependentUpon>Usuarios_Perfil_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios_Perfil_Detalhe.aspx.designer.cs">
+      <DependentUpon>Usuarios_Perfil_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios_Perfil.aspx.cs">
+      <DependentUpon>Usuarios_Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios_Perfil.aspx.designer.cs">
+      <DependentUpon>Usuarios_Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Parceiros.aspx.cs">
+      <DependentUpon>Parceiros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Parceiros.aspx.designer.cs">
+      <DependentUpon>Parceiros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\CondicaodePagamento_Detalhe.aspx.cs">
+      <DependentUpon>CondicaodePagamento_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\CondicaodePagamento_Detalhe.aspx.designer.cs">
+      <DependentUpon>CondicaodePagamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Tarefas_Detalhe.aspx.cs">
+      <DependentUpon>Tarefas_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Tarefas_Detalhe.aspx.designer.cs">
+      <DependentUpon>Tarefas_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Tarefas.aspx.cs">
+      <DependentUpon>Tarefas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Tarefas.aspx.designer.cs">
+      <DependentUpon>Tarefas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Motivos_Detalhe.aspx.cs">
+      <DependentUpon>Motivos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Motivos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Motivos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Produtos.aspx.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Produtos.aspx.designer.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Produtos_Detalhe.aspx.cs">
+      <DependentUpon>Produtos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Produtos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Produtos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\CondicaodePagamento.aspx.cs">
+      <DependentUpon>CondicaodePagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\CondicaodePagamento.aspx.designer.cs">
+      <DependentUpon>CondicaodePagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Fluxo_Detalhe.aspx.cs">
+      <DependentUpon>Fluxo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Fluxo_Detalhe.aspx.designer.cs">
+      <DependentUpon>Fluxo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Fluxo.aspx.cs">
+      <DependentUpon>Fluxo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Fluxo.aspx.designer.cs">
+      <DependentUpon>Fluxo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Departamentos.aspx.cs">
+      <DependentUpon>Departamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Departamentos.aspx.designer.cs">
+      <DependentUpon>Departamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Parceiros_Detalhe.aspx.cs">
+      <DependentUpon>Parceiros_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Parceiros_Detalhe.aspx.designer.cs">
+      <DependentUpon>Parceiros_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Status_Detalhe.aspx.cs">
+      <DependentUpon>Status_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Status_Detalhe.aspx.designer.cs">
+      <DependentUpon>Status_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Departamentos_Detalhe.aspx.cs">
+      <DependentUpon>Departamentos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Departamentos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Departamentos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios_Detalhe.aspx.cs">
+      <DependentUpon>Usuarios_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Usuarios_Detalhe.aspx.designer.cs">
+      <DependentUpon>Usuarios_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Motivos.aspx.cs">
+      <DependentUpon>Motivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Manutencao\Motivos.aspx.designer.cs">
+      <DependentUpon>Motivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento.aspx.cs">
+      <DependentUpon>Procedimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento.aspx.designer.cs">
+      <DependentUpon>Procedimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento_Detalhe.aspx.cs">
+      <DependentUpon>Procedimento_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento_Detalhe.aspx.designer.cs">
+      <DependentUpon>Procedimento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento_Tipo.aspx.cs">
+      <DependentUpon>Procedimento_Tipo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento_Tipo.aspx.designer.cs">
+      <DependentUpon>Procedimento_Tipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento_Tipo_Detalhe.aspx.cs">
+      <DependentUpon>Procedimento_Tipo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\OS\Manutencao\Procedimento_Tipo_Detalhe.aspx.designer.cs">
+      <DependentUpon>Procedimento_Tipo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\OS\OrdemServico.aspx.cs">
+      <DependentUpon>OrdemServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\OS\OrdemServico.aspx.designer.cs">
+      <DependentUpon>OrdemServico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\OS\OrdemServico_Detalhe.aspx.cs">
+      <DependentUpon>OrdemServico_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\OS\OrdemServico_Detalhe.aspx.designer.cs">
+      <DependentUpon>OrdemServico_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\PCP\Fabricacao_Detalhe.aspx.cs">
+      <DependentUpon>Fabricacao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\PCP\Fabricacao_Detalhe.aspx.designer.cs">
+      <DependentUpon>Fabricacao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Acervo.aspx.cs">
+      <DependentUpon>Acervo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Acervo.aspx.designer.cs">
+      <DependentUpon>Acervo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Certificados.aspx.cs">
+      <DependentUpon>Certificados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Certificados.aspx.designer.cs">
+      <DependentUpon>Certificados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Certificados_Detalhe.aspx.cs">
+      <DependentUpon>Certificados_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Certificados_Detalhe.aspx.designer.cs">
+      <DependentUpon>Certificados_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Manutencao\InstrucaoTecnica.aspx.cs">
+      <DependentUpon>InstrucaoTecnica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Manutencao\InstrucaoTecnica.aspx.designer.cs">
+      <DependentUpon>InstrucaoTecnica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Manutencao\InstrucaoTecnica_Detalhe.aspx.cs">
+      <DependentUpon>InstrucaoTecnica_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Qualidade\Manutencao\InstrucaoTecnica_Detalhe.aspx.designer.cs">
+      <DependentUpon>InstrucaoTecnica_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\TipoRequisicao.aspx.cs">
+      <DependentUpon>TipoRequisicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\TipoRequisicao.aspx.designer.cs">
+      <DependentUpon>TipoRequisicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\TipoRequisicao_Detalhe.aspx.cs">
+      <DependentUpon>TipoRequisicao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\TipoRequisicao_Detalhe.aspx.designer.cs">
+      <DependentUpon>TipoRequisicao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores_Pagamento.aspx.cs">
+      <DependentUpon>Colaboradores_Pagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores_Pagamento.aspx.designer.cs">
+      <DependentUpon>Colaboradores_Pagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores_Pagamento_Detalhe.aspx.cs">
+      <DependentUpon>Colaboradores_Pagamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores_Pagamento_Detalhe.aspx.designer.cs">
+      <DependentUpon>Colaboradores_Pagamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\ControleFerias.aspx.cs">
+      <DependentUpon>ControleFerias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\ControleFerias.aspx.designer.cs">
+      <DependentUpon>ControleFerias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\FechamentoPJ.aspx.cs">
+      <DependentUpon>FechamentoPJ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\FechamentoPJ.aspx.designer.cs">
+      <DependentUpon>FechamentoPJ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\GHE_Detalhe.aspx.cs">
+      <DependentUpon>GHE_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\GHE_Detalhe.aspx.designer.cs">
+      <DependentUpon>GHE_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\GHE.aspx.cs">
+      <DependentUpon>GHE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\GHE.aspx.designer.cs">
+      <DependentUpon>GHE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Avaliacao\Avaliacao_Resultado.aspx.cs">
+      <DependentUpon>Avaliacao_Resultado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Avaliacao\Avaliacao_Resultado.aspx.designer.cs">
+      <DependentUpon>Avaliacao_Resultado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Avaliacao\Avaliacao.aspx.cs">
+      <DependentUpon>Avaliacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Avaliacao\Avaliacao.aspx.designer.cs">
+      <DependentUpon>Avaliacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Avaliacao\Avaliacao_Detalhe.aspx.cs">
+      <DependentUpon>Avaliacao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Avaliacao\Avaliacao_Detalhe.aspx.designer.cs">
+      <DependentUpon>Avaliacao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores.aspx.cs">
+      <DependentUpon>Colaboradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores.aspx.designer.cs">
+      <DependentUpon>Colaboradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores_Detalhe.aspx.cs">
+      <DependentUpon>Colaboradores_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Colaboradores_Detalhe.aspx.designer.cs">
+      <DependentUpon>Colaboradores_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Consulta_Colaboradores.aspx.cs">
+      <DependentUpon>Consulta_Colaboradores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Consulta_Colaboradores.aspx.designer.cs">
+      <DependentUpon>Consulta_Colaboradores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Dashboard_RRHH.aspx.cs">
+      <DependentUpon>Dashboard_RRHH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Dashboard_RRHH.aspx.designer.cs">
+      <DependentUpon>Dashboard_RRHH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Documentos_RRHH.aspx.cs">
+      <DependentUpon>Documentos_RRHH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Documentos_RRHH.aspx.designer.cs">
+      <DependentUpon>Documentos_RRHH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\EntregaEPI.aspx.cs">
+      <DependentUpon>EntregaEPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\EntregaEPI.aspx.designer.cs">
+      <DependentUpon>EntregaEPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\EntregaEPI_Detalhe.aspx.cs">
+      <DependentUpon>EntregaEPI_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\EntregaEPI_Detalhe.aspx.designer.cs">
+      <DependentUpon>EntregaEPI_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Funcoes.aspx.cs">
+      <DependentUpon>Funcoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Funcoes.aspx.designer.cs">
+      <DependentUpon>Funcoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Funcoes_Detalhe.aspx.cs">
+      <DependentUpon>Funcoes_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Funcoes_Detalhe.aspx.designer.cs">
+      <DependentUpon>Funcoes_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Manutencao_NR.aspx.cs">
+      <DependentUpon>Manutencao_NR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Manutencao_NR.aspx.designer.cs">
+      <DependentUpon>Manutencao_NR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\OcorrenciasElogios.aspx.cs">
+      <DependentUpon>OcorrenciasElogios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\OcorrenciasElogios.aspx.designer.cs">
+      <DependentUpon>OcorrenciasElogios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\OcorrenciasElogios_Detalhe.aspx.cs">
+      <DependentUpon>OcorrenciasElogios_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\OcorrenciasElogios_Detalhe.aspx.designer.cs">
+      <DependentUpon>OcorrenciasElogios_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\PlanoSaude.aspx.cs">
+      <DependentUpon>PlanoSaude.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\PlanoSaude.aspx.designer.cs">
+      <DependentUpon>PlanoSaude.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\PlanosSSTT.aspx.cs">
+      <DependentUpon>PlanosSSTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\PlanosSSTT.aspx.designer.cs">
+      <DependentUpon>PlanosSSTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\PlanosSSTT_Detalhe.aspx.cs">
+      <DependentUpon>PlanosSSTT_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\PlanosSSTT_Detalhe.aspx.designer.cs">
+      <DependentUpon>PlanosSSTT_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\RelatorioSeguro.aspx.cs">
+      <DependentUpon>RelatorioSeguro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\RelatorioSeguro.aspx.designer.cs">
+      <DependentUpon>RelatorioSeguro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Seguro.aspx.cs">
+      <DependentUpon>Seguro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Seguro.aspx.designer.cs">
+      <DependentUpon>Seguro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Setor.aspx.cs">
+      <DependentUpon>Setor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Setor.aspx.designer.cs">
+      <DependentUpon>Setor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\RelatorioBeneficios_Detalhe.aspx.cs">
+      <DependentUpon>RelatorioBeneficios_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\RelatorioBeneficios_Detalhe.aspx.designer.cs">
+      <DependentUpon>RelatorioBeneficios_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Solicitacao.aspx.cs">
+      <DependentUpon>Solicitacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Solicitacao.aspx.designer.cs">
+      <DependentUpon>Solicitacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Solicitacao_Detalhe.aspx.cs">
+      <DependentUpon>Solicitacao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Solicitacao_Detalhe.aspx.designer.cs">
+      <DependentUpon>Solicitacao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Usuario_Colaborador.aspx.cs">
+      <DependentUpon>Usuario_Colaborador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\RRHH\Usuario_Colaborador.aspx.designer.cs">
+      <DependentUpon>Usuario_Colaborador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Tarefas.aspx.cs">
+      <DependentUpon>Tarefas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Tarefas.aspx.designer.cs">
+      <DependentUpon>Tarefas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos_Detalhe_Acoes.aspx.cs">
+      <DependentUpon>Pedidos_Detalhe_Acoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos_Detalhe_Acoes.aspx.designer.cs">
+      <DependentUpon>Pedidos_Detalhe_Acoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos_Detalhe_Tarefas.aspx.cs">
+      <DependentUpon>Pedidos_Detalhe_Tarefas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos_Detalhe_Tarefas.aspx.designer.cs">
+      <DependentUpon>Pedidos_Detalhe_Tarefas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos_Detalhe.aspx.cs">
+      <DependentUpon>Pedidos_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos_Detalhe.aspx.designer.cs">
+      <DependentUpon>Pedidos_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos.aspx.cs">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Pedidos.aspx.designer.cs">
+      <DependentUpon>Pedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\Requisicao.aspx.cs">
+      <DependentUpon>Requisicao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\Requisicao.aspx.designer.cs">
+      <DependentUpon>Requisicao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\Requisicao_Detalhe.aspx.cs">
+      <DependentUpon>Requisicao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\Requisicao\Requisicao_Detalhe.aspx.designer.cs">
+      <DependentUpon>Requisicao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\ConsultarLM.aspx.cs">
+      <DependentUpon>ConsultarLM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\ConsultarLM.aspx.designer.cs">
+      <DependentUpon>ConsultarLM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\ConsultaSaldo.aspx.cs">
+      <DependentUpon>ConsultaSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\ConsultaSaldo.aspx.designer.cs">
+      <DependentUpon>ConsultaSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\ConsultaSaldo_Detalhe.aspx.cs">
+      <DependentUpon>ConsultaSaldo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\ConsultaSaldo_Detalhe.aspx.designer.cs">
+      <DependentUpon>ConsultaSaldo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Embalagem.aspx.cs">
+      <DependentUpon>Embalagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Embalagem.aspx.designer.cs">
+      <DependentUpon>Embalagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\CEST.aspx.cs">
+      <DependentUpon>CEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\CEST.aspx.designer.cs">
+      <DependentUpon>CEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\CEST_Detalhe.aspx.cs">
+      <DependentUpon>CEST_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\CEST_Detalhe.aspx.designer.cs">
+      <DependentUpon>CEST_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Envio_Detalhe.aspx.cs">
+      <DependentUpon>Envio_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Envio_Detalhe.aspx.designer.cs">
+      <DependentUpon>Envio_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Embalagem_Detalhe.aspx.cs">
+      <DependentUpon>Embalagem_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Embalagem_Detalhe.aspx.designer.cs">
+      <DependentUpon>Embalagem_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Familia_Detalhe.aspx.cs">
+      <DependentUpon>Familia_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Familia_Detalhe.aspx.designer.cs">
+      <DependentUpon>Familia_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Familia.aspx.cs">
+      <DependentUpon>Familia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Familia.aspx.designer.cs">
+      <DependentUpon>Familia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Grupo.aspx.cs">
+      <DependentUpon>Grupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Grupo.aspx.designer.cs">
+      <DependentUpon>Grupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Grupo_Detalhe.aspx.cs">
+      <DependentUpon>Grupo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Grupo_Detalhe.aspx.designer.cs">
+      <DependentUpon>Grupo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\ImportadorSaldo.aspx.cs">
+      <DependentUpon>ImportadorSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\ImportadorSaldo.aspx.designer.cs">
+      <DependentUpon>ImportadorSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\ImportadorSaldo_Detalhe.aspx.cs">
+      <DependentUpon>ImportadorSaldo_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\ImportadorSaldo_Detalhe.aspx.designer.cs">
+      <DependentUpon>ImportadorSaldo_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\LocalArmazenamento_Detalhe.aspx.cs">
+      <DependentUpon>LocalArmazenamento_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\LocalArmazenamento_Detalhe.aspx.designer.cs">
+      <DependentUpon>LocalArmazenamento_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\LocalArmazenamento.aspx.cs">
+      <DependentUpon>LocalArmazenamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\LocalArmazenamento.aspx.designer.cs">
+      <DependentUpon>LocalArmazenamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\NCM.aspx.cs">
+      <DependentUpon>NCM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\NCM.aspx.designer.cs">
+      <DependentUpon>NCM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\NCM_Detalhe.aspx.cs">
+      <DependentUpon>NCM_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\NCM_Detalhe.aspx.designer.cs">
+      <DependentUpon>NCM_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\NCM_Importar.aspx.cs">
+      <DependentUpon>NCM_Importar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\NCM_Importar.aspx.designer.cs">
+      <DependentUpon>NCM_Importar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Sistemas.aspx.cs">
+      <DependentUpon>Sistemas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Sistemas.aspx.designer.cs">
+      <DependentUpon>Sistemas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\TipoProduto.aspx.cs">
+      <DependentUpon>TipoProduto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\TipoProduto.aspx.designer.cs">
+      <DependentUpon>TipoProduto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\TipoProduto_Detalhe.aspx.cs">
+      <DependentUpon>TipoProduto_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\TipoProduto_Detalhe.aspx.designer.cs">
+      <DependentUpon>TipoProduto_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Unidades.aspx.cs">
+      <DependentUpon>Unidades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Unidades.aspx.designer.cs">
+      <DependentUpon>Unidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Unidades_Detalhe.aspx.cs">
+      <DependentUpon>Unidades_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Manutencao\Unidades_Detalhe.aspx.designer.cs">
+      <DependentUpon>Unidades_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Movimentacao_Consulta.aspx.cs">
+      <DependentUpon>Movimentacao_Consulta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Movimentacao_Consulta.aspx.designer.cs">
+      <DependentUpon>Movimentacao_Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Movimentacao_Detalhe.aspx.cs">
+      <DependentUpon>Movimentacao_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Movimentacao_Detalhe.aspx.designer.cs">
+      <DependentUpon>Movimentacao_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\OPI.aspx.cs">
+      <DependentUpon>OPI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\OPI.aspx.designer.cs">
+      <DependentUpon>OPI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\OPI_Detalhe.aspx.cs">
+      <DependentUpon>OPI_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\OPI_Detalhe.aspx.designer.cs">
+      <DependentUpon>OPI_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Rastreabilidade.aspx.cs">
+      <DependentUpon>Rastreabilidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\Rastreabilidade.aspx.designer.cs">
+      <DependentUpon>Rastreabilidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\RelatorioMovimentacao.aspx.cs">
+      <DependentUpon>RelatorioMovimentacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\RelatorioMovimentacao.aspx.designer.cs">
+      <DependentUpon>RelatorioMovimentacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\SeparacaoPedido.aspx.cs">
+      <DependentUpon>SeparacaoPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\SeparacaoPedido.aspx.designer.cs">
+      <DependentUpon>SeparacaoPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\SeparacaoPedido_Detalhe.aspx.cs">
+      <DependentUpon>SeparacaoPedido_Detalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Paginas\WMS\SeparacaoPedido_Detalhe.aspx.designer.cs">
+      <DependentUpon>SeparacaoPedido_Detalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\PermissaoNegada.aspx.cs">
+      <DependentUpon>PermissaoNegada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\PermissaoNegada.aspx.designer.cs">
+      <DependentUpon>PermissaoNegada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\teste_API.aspx.cs">
+      <DependentUpon>teste_API.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\teste_API.aspx.designer.cs">
+      <DependentUpon>teste_API.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrameWork\Classes\cls_Adm.cs" />
+    <Compile Include="FrameWork\Classes\cls_Arquivos.cs" />
+    <Compile Include="FrameWork\Classes\cls_Atividades.cs" />
+    <Compile Include="FrameWork\Classes\cls_Comercial_Instalacao.cs" />
+    <Compile Include="FrameWork\Classes\cls_Comercial_OrcamentoOperacoes.cs" />
+    <Compile Include="FrameWork\Classes\cls_Comercial_Tabelas.cs" />
+    <Compile Include="FrameWork\Classes\cls_CondicoesPagamento.cs" />
+    <Compile Include="FrameWork\Classes\cls_Despesas.cs" />
+    <Compile Include="FrameWork\Classes\cls_EntidadeFuncoes.cs" />
+    <Compile Include="FrameWork\Classes\cls_Escopo.cs" />
+    <Compile Include="FrameWork\Classes\cls_FAQ.cs" />
+    <Compile Include="FrameWork\Classes\cls_Forum.cs" />
+    <Compile Include="FrameWork\Classes\cls_GeradorPdfAtividades.cs" />
+    <Compile Include="FrameWork\Classes\cls_Importador_Itens.cs" />
+    <Compile Include="FrameWork\Classes\cls_LoteSeries.cs" />
+    <Compile Include="FrameWork\Classes\cls_Manutencao.cs" />
+    <Compile Include="FrameWork\Classes\cls_OrcamentoInstalacao.cs" />
+    <Compile Include="FrameWork\Classes\cls_OSAcomodacao.cs" />
+    <Compile Include="FrameWork\Classes\cls_OSColaboradores.cs" />
+    <Compile Include="FrameWork\Classes\cls_OSEPI.cs" />
+    <Compile Include="FrameWork\Classes\cls_Avaliacao .cs" />
+    <Compile Include="FrameWork\Classes\cls_OSTransporte.cs" />
+    <Compile Include="FrameWork\Classes\cls_Pedido.cs" />
+    <Compile Include="FrameWork\Classes\cls_ProdutoInstalacao.cs" />
+    <Compile Include="FrameWork\Classes\cls_Requisicoes.cs" />
+    <Compile Include="FrameWork\Classes\cls_RRHH.cs" />
+    <Compile Include="FrameWork\Classes\cls_WMS_Etiqueta.cs" />
+    <Compile Include="FrameWork\Classes\cls_WMS_Posicao.cs" />
+    <Compile Include="FrameWork\Classes\cls_WMS_ProdutoMovimentacaoRel.cs" />
+    <Compile Include="FrameWork\Classes\cls_WMS_Produtos.cs" />
+    <Compile Include="FrameWork\Classes\cls_WMS_Volumes.cs" />
+    <Compile Include="FrameWork\Classes\ExcelApp.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_ArquivoMarkdownService.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Auditoria.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Chat.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_ClaudeProvider.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Config.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Contexto.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Criptografia.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Custo.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_GeminiProvider.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_GroqProvider.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Manutencao.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Modelos.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_OpenAICompatProvider.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_OpenAIProvider.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Permissoes.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Progresso.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Provider.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_ProviderUtils.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Repositorio.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_ResolucaoTexto.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_Sanitizacao.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_ToolExecutor.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_ToolRegistry.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_WorkflowEngine.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_WorkflowExecucaoService.cs" />
+    <Compile Include="FrameWork\Classes\IA\cls_IA_WorkflowValidador.cs" />
+    <Compile Include="FrameWork\Classes\QRCoderTT.cs" />
+    <Compile Include="FrameWork\PermissaoAcesso.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewGroup.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewGroupList.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewHelper.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewSummary.cs" />
+    <Compile Include="FrameWork\GridViewHelper\GridViewSummaryList.cs" />
+    <Compile Include="i9\BuscaPedido.cs" />
+    <Compile Include="i9\Conexao-i9.cs" />
+    <Compile Include="App\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App\Controles\BreadCrumb.ascx.cs">
+      <DependentUpon>BreadCrumb.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Controles\BreadCrumb.ascx.designer.cs">
+      <DependentUpon>BreadCrumb.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrameWork\Identity.cs" />
+    <Compile Include="App\main.master.cs">
+      <DependentUpon>main.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="System\Web\UI\WebControls\HtmlIframe.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="App\Reports\EnvioOPI.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\EnviosVolumes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Invoice.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\InvoiceDespachante.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\InvoiceDrawBack.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Orcamento.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Orcamento_Minimo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Origin.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\OriginCEST.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\Packing.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\ProformaInvoice.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App\Reports\ProformaInvoiceDrawBack.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TT_Framework\TT_Framework.csproj">
+      <Project>{e16fed48-e4cb-49fb-9f77-b72f3060f586}</Project>
+      <Name>TT_Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="App\JS\tinymce_v8_3_2\js\tinymce\tinymce.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6997</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6997/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\Docnet.Core.2.6.0\build\net45\Docnet.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Docnet.Core.2.6.0\build\net45\Docnet.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.5.2.0\build\Tesseract.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.6.0.3\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <Import Project="..\packages\Docnet.Core.2.6.0\build\net45\Docnet.Core.targets" Condition="Exists('..\packages\Docnet.Core.2.6.0\build\net45\Docnet.Core.targets')" />
+  <Import Project="..\packages\Tesseract.5.2.0\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

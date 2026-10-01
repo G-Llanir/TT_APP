@@ -1,0 +1,19 @@
+root = true
+
+[*]
+charset = utf-8-bom
+end_of_line = crlf
+insert_final_newline = true
+
+[*.aspx]
+charset = utf-8-bom
+
+[*.ascx]
+charset = utf-8-bom
+
+[*.master]
+charset = utf-8-bom
+
+
+[*.{html,js,css}]
+charset = utf-8
