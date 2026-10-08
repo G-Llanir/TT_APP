@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - qa
+      - dev-*
+      - release/*
+  push:
+    branches:
+      - main
+      - qa
+      - dev-*
+      - release/*
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  SOLUTION_FILE: TT_APP.sln
+  BUILD_CONFIGURATION: Release
+  BUILD_PLATFORM: Any CPU
+
+jobs:
+  build:
+    name: build
+    runs-on: windows-2022
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v3
+        with:
+          msbuild-architecture: x64
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v3
+
+      - name: Restore NuGet packages
+        run: nuget restore $env:SOLUTION_FILE -NonInteractive
+
+      - name: Create diagnostics directory
+        run: New-Item -ItemType Directory -Force -Path artifacts | Out-Null
+
+      - name: Build solution
+        run: >-
+          msbuild $env:SOLUTION_FILE /m /nologo /verbosity:minimal
+          /p:Configuration=$env:BUILD_CONFIGURATION
+          /p:Platform="$env:BUILD_PLATFORM"
+          /bl:artifacts\ci-build.binlog
+
+      - name: Upload build log
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-build-log
+          path: artifacts/ci-build.binlog
+          if-no-files-found: ignore
+          retention-days: 14
