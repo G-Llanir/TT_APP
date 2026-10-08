@@ -41,11 +41,10 @@ jobs:
         with:
           msbuild-architecture: x64
 
-      - name: Setup NuGet
-        uses: nuget/setup-nuget@v3
-
       - name: Restore NuGet packages
-        run: nuget restore $env:SOLUTION_FILE -NonInteractive
+        run: >-
+          msbuild $env:SOLUTION_FILE /t:Restore /m /nologo /verbosity:minimal
+          /p:RestorePackagesConfig=true
 
       - name: Create diagnostics directory
         run: New-Item -ItemType Directory -Force -Path artifacts | Out-Null
